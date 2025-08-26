@@ -43,8 +43,9 @@
 #endif
 
 void Trail::start() {
-	currShapeId = MAGIC_CIRCLE;
+	ofSetCircleResolution(64); //42 is the answer to everything!
 
+	currShapeId = MAGIC_CIRCLE;
 }
 
 void Trail::update() {

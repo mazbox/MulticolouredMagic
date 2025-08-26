@@ -47,6 +47,7 @@ void Flip::start() {
 	pos.push_back(ofGetWindowSize()/2);
 	lastPos = pos.back();
 	currShapeId = MAGIC_CIRCLE;
+	ofSetCircleResolution(64);
 }
 
 void Flip::draw() {

@@ -117,7 +117,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 	if(!gui.isOn())
 #endif
 	{
-		#ifdef TARGET_OF_IPHONE
+//		#ifdef TARGET_OF_IPHONE
 		if(currentApp!=mainMenu) {
 			if(backButton.touchDown(touch.x, touch.y, touch.id)) {
 				return;
@@ -137,7 +137,7 @@ void testApp::touchDown(ofTouchEventArgs &touch){
 				}
 			}
 		}
-		#endif
+//		#endif
 		currentApp->touchDown(touch.x, touch.y, touch.id);
 
 	}
@@ -149,7 +149,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 	if(!gui.isOn())
 #endif
 	{
-		#ifdef TARGET_OF_IPHONE
+//		#ifdef TARGET_OF_IPHONE
 		if(currentApp!=mainMenu) {
 			if(backButton.touchMoved(touch.x, touch.y, touch.id)) {
 				return;
@@ -163,7 +163,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
 				}
 			}
 		}
-		#endif
+//		#endif
 		currentApp->touchMoved(touch.x, touch.y, touch.id);
 	}
 }
@@ -174,7 +174,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 	if(!gui.isOn())
 #endif
 	{
-		#ifdef TARGET_OF_IPHONE
+//		#ifdef TARGET_OF_IPHONE
 		if(currentApp!=mainMenu) {
 			if(backButton.touchUp(touch.x, touch.y, touch.id)) {
 				return;
@@ -188,7 +188,7 @@ void testApp::touchUp(ofTouchEventArgs &touch){
 				}
 			}
 		}
-		#endif
+//		#endif
 		currentApp->touchUp(touch.x, touch.y, touch.id);
 	}
 }

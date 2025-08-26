@@ -47,7 +47,7 @@
 
 
 void Expand::setup(){
-	ofSetCircleResolution(42); //42 is the answer to everything!
+	ofSetCircleResolution(64); //42 is the answer to everything!
 
 	timeOfLastInteraction = ofGetElapsedTimef();
 
