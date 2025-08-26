@@ -55,7 +55,7 @@ void drawTriangle(ofVec2f centre, float size, float rotation) {
 }
 
 void drawCircle(ofVec2f centre, float size, float rotation) {
-    ofCircle(centre, size*0.5);
+    ofDrawCircle(centre, size*0.5);
 }
 
 void drawCross(ofVec2f centre, float size, float rotation) {

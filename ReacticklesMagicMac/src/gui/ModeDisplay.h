@@ -27,79 +27,61 @@
  */
 
 /**
- * ReactickleButton.cpp
- * ReacticklesMagic
+ * ModeDisplay.h
+ * ReacticklesMagicMac
  *
- * Created by Marek Bereza on 26/04/2011.
+ * Created by Marek Bereza on 13/06/2011.
  *
  */
-
-#include "ReactickleButton.h"
-#include "ImageCache.h"
 #include "constants.h"
+#include "ImageCache.h"
 
-ReactickleButton::ReactickleButton(string name) {
-	this->setup(name);
-	this->name = name;
-	listener = NULL;
-	currTouchId = -1;
-	down = false;
-}
-void ReactickleButton::setup(string name) {
-	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
-	width = screenshot->getWidth();
-	height = screenshot->getHeight();
-	
-	//height *= 0.8;
-	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
-}
-void ReactickleButton::draw() {
-	if(down) {
-		ofSetHexColor(0x999999);
-	} else {
-		ofSetHexColor(0xFFFFFF);
-	}
-	screenshot->draw(x, y, width, height);
-//	ofSetHexColor(0xFF0000);
-//	ofRect(*this);
-//	ofDrawBitmapString(name, x, y);
-}
-
-void ReactickleButton::setListener(ReactickleButtonListener *listener) {
-	this->listener = listener;
-}
-
-
-bool ReactickleButton::touchDown(float xx, float yy, int tid) {
-	if(inside(xx, yy)) {
-		currTouchId = tid;
-		down = true;
-		startX = xx;
+// in seconds - display time is how long it stays on the screen before fading
+// and the fade time is how long it takes to fade out.
+#define MODE_DISPLAY_TIME 1
+#define MODE_FADE_TIME 1
+class ModeDisplay {
+public:
+	ofImage **modes;
+	int numModes;
+	int mode;
+	float lastTimeChanged;
+	ModeDisplay() {
+		mode = 0;
+		numModes = 3;
+		lastTimeChanged = 0;
 	}
 	
-	return down;
-}
-
-bool ReactickleButton::touchMoved(float xx, float yy, int tid) {
-	if(inside(xx, yy) && tid==currTouchId) {
-		down = true;
-	} else {
-		down = false;
-	}
-	return down;
-}
-
-bool ReactickleButton::touchUp(float xx, float yy, int tid) {
-	
-	
-	if(currTouchId==tid) {
-		currTouchId = -1;
-		down = false;
-		if(inside(xx, yy) && ABS(startX - xx)<10) {
-			//printf("%d\n", ABS(startX - xx));
-			if(listener!=NULL) listener->reactickleSelected(name);
+	void setup() {
+		modes = new ofImage*[3];
+		for(int i = 0; i < numModes; i++) {
+			modes[i] = ImageCache::getImage(IMAGE_ROOT + "mode"+(ofToString(i+1))+".png");
+			modes[i]->setAnchorPercent(0.5, 0.5);
 		}
 	}
-	return down;
 	
-}
+	void setMode(int mode) {
+		this->mode = mode;
+		lastTimeChanged = ofGetElapsedTimef();
+	}
+	int getMode() {
+		return mode;
+	}
+	
+	void draw() {
+		float timeSinceLastChange = ofGetElapsedTimef() - lastTimeChanged;
+		// should we draw?
+		if(timeSinceLastChange>0 && timeSinceLastChange<MODE_DISPLAY_TIME+MODE_FADE_TIME) {
+			float alpha = 0;
+			if(timeSinceLastChange<MODE_DISPLAY_TIME) {
+				// we're just displaying
+				alpha = ofMap(timeSinceLastChange, 0, 0.2, 0, 1, true);
+			} else {
+				// we're fading out
+				alpha = ofMap(timeSinceLastChange - MODE_DISPLAY_TIME, 0, MODE_FADE_TIME, 1, 0, true);
+			}
+			ofSetColor(255, 255, 255, 255*alpha);
+			modes[mode]->draw(WIDTH/2, HEIGHT/2);
+		}
+	}
+};

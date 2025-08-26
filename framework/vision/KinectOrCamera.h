@@ -35,7 +35,7 @@
  */
 #pragma once
 #include "ofMain.h"
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxKinect.h"
 #endif
 class KinectOrCamera {
@@ -54,9 +54,8 @@ public:
 	int getHeight() { return height; } 
 	ofVideoGrabber camera;
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxKinect kinect;
-
 #endif
 private:
 	unsigned char *greyscaleBuffer;

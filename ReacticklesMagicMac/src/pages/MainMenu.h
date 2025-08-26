@@ -27,79 +27,49 @@
  */
 
 /**
- * ReactickleButton.cpp
+ * MainMenu.h
  * ReacticklesMagic
  *
  * Created by Marek Bereza on 26/04/2011.
  *
  */
-
+#include "Reactickle.h"
+#include "InteractiveObject.h"
 #include "ReactickleButton.h"
-#include "ImageCache.h"
-#include "constants.h"
-
-ReactickleButton::ReactickleButton(string name) {
-	this->setup(name);
-	this->name = name;
-	listener = NULL;
-	currTouchId = -1;
-	down = false;
-}
-void ReactickleButton::setup(string name) {
-	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
-	width = screenshot->getWidth();
-	height = screenshot->getHeight();
-	
-	//height *= 0.8;
-	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
-}
-void ReactickleButton::draw() {
-	if(down) {
-		ofSetHexColor(0x999999);
-	} else {
-		ofSetHexColor(0xFFFFFF);
-	}
-	screenshot->draw(x, y, width, height);
-//	ofSetHexColor(0xFF0000);
-//	ofRect(*this);
-//	ofDrawBitmapString(name, x, y);
-}
-
-void ReactickleButton::setListener(ReactickleButtonListener *listener) {
-	this->listener = listener;
-}
-
-
-bool ReactickleButton::touchDown(float xx, float yy, int tid) {
-	if(inside(xx, yy)) {
-		currTouchId = tid;
-		down = true;
-		startX = xx;
-	}
-	
-	return down;
-}
-
-bool ReactickleButton::touchMoved(float xx, float yy, int tid) {
-	if(inside(xx, yy) && tid==currTouchId) {
-		down = true;
-	} else {
-		down = false;
-	}
-	return down;
-}
-
-bool ReactickleButton::touchUp(float xx, float yy, int tid) {
+#include "SimpleButton.h"
+#include "ImageObject.h"
+class MainMenu: public Reactickle, public ReactickleButtonListener, public SimpleButtonListener {
+public:
+	void setup();
+	void draw();
 	
 	
-	if(currTouchId==tid) {
-		currTouchId = -1;
-		down = false;
-		if(inside(xx, yy) && ABS(startX - xx)<10) {
-			//printf("%d\n", ABS(startX - xx));
-			if(listener!=NULL) listener->reactickleSelected(name);
-		}
-	}
-	return down;
+	// this is a subset of items - just the ones that are listed
+	// as reactickles
+	vector<ReactickleButton*> reactickleButtons;
+	void initMenu();
+	bool touchDown(float x, float y, int touchId);
+	bool touchMoved(float x, float y, int touchId);
+	bool touchUp(float x, float y, int touchId);
+	void reactickleSelected(string name);
+	void buttonPressed(string name);
+private:
+	void arrange();
 	
-}
+	// the scrolling reactickles area
+	ofRectangle scrollRect;
+	
+	// how much we're scrolled away from zero
+	float scrollOffset;
+	
+	// scrolling touch stuff
+	bool touching;
+	float touchX;
+	float deltaX;
+	float totalWidth;
+	
+	SimpleButton settingsButton;
+	SimpleButton aboutButton;
+	ImageObject bgImage;
+	ImageObject logo;
+};

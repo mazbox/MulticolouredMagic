@@ -26,104 +26,98 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/**
- * KinectOrCamera.cpp
- * magic
- *
- * Created by Marek Bereza on 13/04/2011.
- *
- */
+#pragma once
 
-#include "KinectOrCamera.h"
+#include "ofMain.h"
 
-void KinectOrCamera::setup() {
-	width = 640;
-	height = 480;
-	usingKinect = true;
-	// try kinect first
-	greyscaleBuffer = NULL;
-
-#ifdef ADVANCED_STUFF
-	kinect.init();
-	usingKinect = kinect.open();
-	kinect.setRegistration(true);
-#else
-	usingKinect = false;
-	width /= 2;
-	height /= 2;
-#endif
-
-	if(usingKinect) {
-
-		printf("Using kinect\n");
-	} else {
-		camera		.setVerbose(false);
 #ifdef TARGET_OF_IPHONE
-		// if we're working on the iPhone
-		// we want to use the front-facing camera.
-		camera.setDeviceID(2);
+
+#include "ofxiPhone.h"
+#include "ofxiPhoneExtras.h"
+
 #endif
 
-		// init video grabber
-		camera.initGrabber(width, height);
-		width = camera.getWidth();
-		height = camera.getHeight();
-		greyscaleBuffer = new unsigned char[width*height];
-		// set up the camera
-
-	}
-
-
-
-}
-
-void KinectOrCamera::update() {
-	if(usingKinect) {
 #ifdef ADVANCED_STUFF
-		kinect.update();
-#endif
-	} else {
 
-		camera.update();
-	}
-}
-void KinectOrCamera::close() {
-	if(usingKinect) {
+#include "ofxOpenCv.h"
+#include "ofxSimpleGuiToo.h"
+#include "TuioKinect.h"
+#include "ofxTuioClient.h"
+#include "ofxOsc.h"
+#define HOST "localhost"
+#define PORT 12345
+
+#endif
+
+
+
+#include "constants.h"
+#include "Reactickle.h"
+#include "MainMenu.h"
+#include "ReactickleApp.h"
+#include "HoldButton.h"
+#include "AboutPage.h"
+#include "SettingsPage.h"
+#include "ModeDisplay.h"
+
+class testApp : public ReactickleApp, public SimpleButtonListener {
+
+public:
+	void setup();
+	void update();
+	void draw();
+
+	
+	void buttonDown(float x, float y, int id);
+	void buttonMoved(float x, float y, int id);
+	void buttonUp(float x, float y, int id);
+
+		
+	// don't use these for now
+	void touchDown(ofTouchEventArgs &touch);
+	void touchMoved(ofTouchEventArgs &touch);
+	void touchUp(ofTouchEventArgs &touch);
+
+
 #ifdef ADVANCED_STUFF
-		kinect.close();
+	void keyPressed(int key);
+	void tuioTouchDown(ofTouchEventArgs &touch);
+	void tuioTouchMoved(ofTouchEventArgs &touch);
+	void tuioTouchUp(ofTouchEventArgs &touch);
 #endif
-	} else {
-		camera.close();
-		delete [] greyscaleBuffer;
-	}
-}
 
 
-unsigned char *KinectOrCamera::getPixels() {
-	if(usingKinect) {
+	// app stuff
+	void launchReactickle(Reactickle *reactickle);
+	void showSettings();
+	void showAbout();
+
+
+	AboutPage aboutPage;
+	SettingsPage settingsPage;
+
+
+	// back buttons for when on a reactickle
+	HoldButton modeUpButton;
+	HoldButton modeDownButton;
+
+	// button event (for back button)
+	void buttonPressed(string name);
+
+private:
+	bool isReactickle(Reactickle *reactickle);
+
+
+	ModeDisplay modeDisplay;
 #ifdef ADVANCED_STUFF
-		return kinect.getPixels();
-#else
-		return nullptr;
+	ofxTuioClient tuioClient;
+    ofxOscSender sender;
+	ofxSimpleGuiToo gui;
+	TuioKinect kinect;
+	void setupGui();
+	bool mustTakeScreenshot;
+	ofImage screenshot;
 #endif
-	} else {
-		return camera.getPixels().getData();
-	}
-}
+};
 
-unsigned char *KinectOrCamera::getDepthPixels() {
-	if(usingKinect) {
-#ifdef ADVANCED_STUFF
-		return kinect.getDepthPixels();
-#endif
-	} else {
-		unsigned char *pix = camera.getPixels().getData();
-		if(pix==NULL) return NULL;
-		int numPixels = width*height;
-		for(int i = 0; i < numPixels; i++) {
-			greyscaleBuffer[i] = pix[i*3];
-		}
-		return greyscaleBuffer;
-	}
-	return NULL;
-}
+

@@ -53,7 +53,7 @@
 #define	CROSS_FADE_TIME 2
 
 //OSC things
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxOsc.h"
 //#include "ofxWebServer.h"
 #endif
@@ -70,7 +70,7 @@ public ofBaseApp
 public:
 	// call this in your reactickle app setup
 	void setupApp(ReactickleApp *instance, string appName);
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
     void setupOSC();
 #endif    
 	void exit();
@@ -110,7 +110,7 @@ public:
 	// hack to make the mode up/dn buttons work.
 	virtual void buttonDown(float x, float y, int id) {}; 
 	virtual void buttonUp(float x, float y, int id) {}; 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
     //more osc fun
     ofxOscSender sender;
 #endif    
@@ -140,7 +140,7 @@ protected:
 	virtual bool isReactickle(Reactickle *reactickle) = 0;
 	float gain;
 	float volume;
-	static const float VOLUME_THRESHOLD = 0.3;
+	constexpr static float VOLUME_THRESHOLD = 0.3f;
 	Reactickle *currentApp;
 	Reactickle *mainMenu;
 	

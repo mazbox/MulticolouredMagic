@@ -98,7 +98,9 @@ int main(){
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
 	
-	ofSetupOpenGL(WIDTH, HEIGHT, OF_FULLSCREEN);			// <-------- setup the GL context
+	auto fullscreenType = OF_FULLSCREEN;
+	fullscreenType = OF_WINDOW;
+	ofSetupOpenGL(WIDTH, HEIGHT, fullscreenType);			// <-------- setup the GL context
 	
 	
 

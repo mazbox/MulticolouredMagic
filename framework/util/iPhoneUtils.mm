@@ -43,14 +43,15 @@
 // -------------------------------------------------------------------------------------------------------------------------
 #pragma mark -
 #pragma mark String functions
-
-NSString *cStringToNSString(char *s) {
-	return [[[NSString alloc] initWithCString: s] autorelease];
-}
-
-void NSStringToString(NSString *s, char *outStr) {
-	[s getCString:outStr];
-}
+//
+//NSString *cStringToNSString(char *s) {
+//	return [NSString stringWithFormat:@"%s", s];
+//}
+//
+//void NSStringToString(NSString *s, char *outStr) {
+//	[s getCString:outStr];
+//	[s UTF8String];
+//}
 
 
 // -------------------------------------------------------------------------------------------------------------------------
@@ -175,16 +176,25 @@ void iPhoneSendEmail(char *to, char *subject, char *body, char *attachmentPath, 
 
 
 string getTmpPath() {
-	
-	char input[512];
-	CFStringRef homeDir = (CFStringRef)NSHomeDirectory();
-	CFStringGetCStringPtr(homeDir,kCFStringEncodingASCII);
-	
-	CFStringGetCString( homeDir, input, 512, kCFStringEncodingASCII);
-	
-	CFRelease(homeDir);
-	return string(input) + "/tmp/";
-	
+
+ #if defined(__APPLE__) // && TARGET_OS_IOS
+	 std::string _p;
+	 if (@available(macOS 10.12, *)) {
+		 NSURL *url = [[NSFileManager defaultManager] temporaryDirectory];
+		 _p		   = [[url path] UTF8String];
+	 } else {
+		 // Fallback on earlier versions
+		 _p = [NSTemporaryDirectory() UTF8String];
+	 }
+
+ #elif defined(__ANDROID__)
+	 std::string _p = getAndroidTempDir();
+ #else
+	 std::string _p = fs::temp_directory_path().string();
+ #endif
+	 return _p;
+ 
+
 }
 
 string getBundlePath() {
@@ -225,16 +235,19 @@ int getFreeMemory() {
 #pragma mark native alerts and warnings
 void warnWithAlert(string title, string message) {
 	// open an alert with just an OK button
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cStringToNSString((char*)title.c_str()) message:cStringToNSString((char*)message.c_str())  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-	[alert show];
-	[alert release];
+//	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:cStringToNSString((char*)title.c_str()) message:cStringToNSString((char*)message.c_str())  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+//	[alert show];
+//	[alert release];
+	NSLog(@"NOT IMPLEMENTED");
+	assert(0);
 }
 
 
 void launchUrl(string url) {
-	NSString *urlStr = cStringToNSString((char*)url.c_str());
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
-	
+//	NSString *urlStr = cStringToNSString((char*)url.c_str());
+//	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
+	NSLog(@"NOT IMPLEMENTED");
+	assert(0);
 }
 
 string iPhoneGetDocsDir() {
@@ -243,67 +256,30 @@ string iPhoneGetDocsDir() {
 }
 
 
-/*string getUDID() {
-	char udidOut[128];	
-	NSString *udid = [[UIDevice currentDevice] uniqueIdentifier];
-	
-	NSStringToString(udid, udidOut);
-	return string(udidOut);
-}*/
+std::string downloadFile(std::string url) {
+#ifdef __APPLE__
+	// the URL to save
+	NSURL *urlNS = [NSURL URLWithString:[NSString stringWithUTF8String:url.c_str()]];
 
+	NSError *error = nil;
+	// turn it into a request and use NSData to load its content
+	//	NSURLRequest *request = [NSURLRequest requestWithURL:urlNS];
+	//	NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSData *data = [NSData dataWithContentsOfURL:urlNS options:NSDataReadingUncached error:&error];
 
-#include "Poco/Net/HTTPClientSession.h"
-#include "Poco/Net/HTTPRequest.h"
-#include "Poco/Net/HTTPResponse.h"
-#include "Poco/StreamCopier.h"
-#include "Poco/Path.h"
-#include "Poco/URI.h"
-#include "Poco/Net/HTMLForm.h"
-#include "Poco/Exception.h"
-#include <iostream>
-#include <fstream>
-
-using Poco::Net::HTTPClientSession;
-using Poco::Net::HTTPRequest;
-using Poco::Net::HTTPResponse;
-using Poco::Net::HTTPMessage;
-using Poco::StreamCopier;
-using Poco::Path;
-using Poco::Net::HTMLForm;
-using Poco::URI;
-using Poco::Exception;
-
-
-
-/**
- * Downloads a file to where you tell it to. (Blocking)
- */
-bool downloadFile(string url, string destination) {
-	
-	
-	
-	try
-	{
-		URI uri(url.c_str());
-		string path(uri.getPathAndQuery());
-		
-		if (path.empty()) path = "/";
-		
-		HTTPClientSession session(uri.getHost(), uri.getPort());
-		HTTPRequest req(HTTPRequest::HTTP_GET, path, HTTPMessage::HTTP_1_1);
-		session.sendRequest(req);
-		HTTPResponse res;
-		std::istream& rs = session.receiveResponse(res);
-		//std::cout << res.getStatus() << " " << res.getReason() << std::endl;
-		
-		ofstream myfile (destination.c_str());
-		
-		StreamCopier::copyStream(rs, myfile);
+	if (error != nil) {
+		NSLog(@"Error downloading data: %@", error);
+		std::string errorMessage = [NSString stringWithFormat:@"Error downloading data: %@", error].UTF8String;
+		throw std::runtime_error(std::string("Error downloading ") + url + " - " + errorMessage);
 	}
-	catch (Exception& exc)
-	{
-		std::cerr << exc.displayText() << std::endl;
-		return false;
+
+	NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	if (str == nil) {
+		throw std::runtime_error(std::string("Error downloading ") + url + " - Couldn't convert NSData to string in downloadUrl");
 	}
-	return true;
+	return [str UTF8String];
+#else
+	Log::e() << "No implementation of downloadUrl yet";
+	return "";
+#endif
 }

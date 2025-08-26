@@ -68,7 +68,7 @@ void Trail::update() {
             currShapeId = MAGIC_CIRCLE;
         }
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
         ofxOscMessage m;
         m.setAddress( "/shapechange" );
         m.addIntArg( currShapeId );

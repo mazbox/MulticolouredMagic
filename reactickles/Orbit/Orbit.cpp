@@ -259,7 +259,7 @@ void Orbit::nextShape(){
 	}
 //	printf("currentShapeType: %d\n", currentShapeType);
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxOscMessage m;
 	m.setAddress( "/shapechange" );
 	m.addIntArg( currentShapeType );

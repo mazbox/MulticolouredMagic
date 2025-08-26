@@ -91,7 +91,7 @@ public:
 	}
 	string toString() {
 		string line, buf;
-		ifstream InFile( xmlFilePath.c_str() );
+		std::ifstream InFile( xmlFilePath.c_str() );
 		while(getline(InFile,line))
 			buf += line;
 		return buf;

@@ -41,7 +41,9 @@
 
 #include "Reactickle.h"
 #include "TraceShape.h"
+#ifdef ADVANCED_STUFF
 #include "ofxOsc.h"
+#endif
 #include "ReactickleApp.h"
 
 
@@ -115,7 +117,7 @@ void Trace::addNewTraceToTraces(float x, float y){
 		currShapeID = MAGIC_CIRCLE;
 	}    
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxOscMessage m;
 	m.setAddress( "/shapechange" );
 	m.addIntArg( currShapeID );

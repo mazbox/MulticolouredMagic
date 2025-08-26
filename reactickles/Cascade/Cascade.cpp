@@ -39,7 +39,9 @@
     #include "ColorPicker.h"
 #endif
 #include "Settings.h"
+#ifdef ADVANCED_STUFF
 #include "ofxOsc.h"
+#endif
 #include "ReactickleApp.h"
 
 ///////////////////////////////////////////////////////////////////////
@@ -111,7 +113,7 @@ void Cascade::update() {
 				currShapeId %= NUM_MAGIC_SHAPES;
 			}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 			ofxOscMessage m;
 			m.setAddress( "/shapechange" );
 			m.addIntArg( currShapeId );
@@ -186,6 +188,7 @@ bool Cascade::touchDown(float x, float y, int touchId) {
 	clapPoint = ofPoint(x, y);
 	clapping = true;
 //#endif
+	return true;
 }
 
 void Cascade::audioReceived(float *input, int length, int nChannels) {
@@ -201,7 +204,7 @@ void Cascade::audioReceived(float *input, int length, int nChannels) {
 			clapPoint = ofPoint(ofRandomWidth(), ofRandomHeight());
 			clapping = true;
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 			//claps are touch downs for this one...
 			ofxOscMessage m;
 			m.setAddress( "/touchdown" );

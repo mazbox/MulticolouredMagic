@@ -20,7 +20,7 @@ void RingDrawer::drawRing(ofVec2f centre, float radius, float amount, float inne
 	int num = ofMap(amount, 0, 1, 0, unitCircle.size(), true);
 	glDrawArrays(GL_TRIANGLE_FAN, 0, num);
 	ofSetHexColor(bgColor);
-	ofCircle(0, 0, innerRadius*0.98/radius);
+	ofDrawCircle(0, 0, innerRadius*0.98/radius);
 	glPopMatrix();
 }
 

@@ -27,103 +27,42 @@
  */
 
 /**
- * KinectOrCamera.cpp
- * magic
+ * AboutPage.h
+ * ReacticklesMagic
  *
- * Created by Marek Bereza on 13/04/2011.
+ * Created by Marek Bereza on 27/04/2011.
  *
  */
 
-#include "KinectOrCamera.h"
-
-void KinectOrCamera::setup() {
-	width = 640;
-	height = 480;
-	usingKinect = true;
-	// try kinect first
-	greyscaleBuffer = NULL;
-
-#ifdef ADVANCED_STUFF
-	kinect.init();
-	usingKinect = kinect.open();
-	kinect.setRegistration(true);
-#else
-	usingKinect = false;
-	width /= 2;
-	height /= 2;
-#endif
-
-	if(usingKinect) {
-
-		printf("Using kinect\n");
-	} else {
-		camera		.setVerbose(false);
+#include "Reactickle.h"
+#include "ImageCache.h"
+#include "constants.h"
+#include "ImageObject.h"
+#include "SimpleButton.h"
+// ugh
 #ifdef TARGET_OF_IPHONE
-		// if we're working on the iPhone
-		// we want to use the front-facing camera.
-		camera.setDeviceID(2);
-#endif
-
-		// init video grabber
-		camera.initGrabber(width, height);
-		width = camera.getWidth();
-		height = camera.getHeight();
-		greyscaleBuffer = new unsigned char[width*height];
-		// set up the camera
-
-	}
-
-
-
-}
-
-void KinectOrCamera::update() {
-	if(usingKinect) {
-#ifdef ADVANCED_STUFF
-		kinect.update();
-#endif
-	} else {
-
-		camera.update();
-	}
-}
-void KinectOrCamera::close() {
-	if(usingKinect) {
-#ifdef ADVANCED_STUFF
-		kinect.close();
-#endif
-	} else {
-		camera.close();
-		delete [] greyscaleBuffer;
-	}
-}
-
-
-unsigned char *KinectOrCamera::getPixels() {
-	if(usingKinect) {
-#ifdef ADVANCED_STUFF
-		return kinect.getPixels();
+#include "iPhoneUtils.h"
 #else
-		return nullptr;
+#define launchUrl ofLaunchBrowser
 #endif
-	} else {
-		return camera.getPixels().getData();
-	}
-}
 
-unsigned char *KinectOrCamera::getDepthPixels() {
-	if(usingKinect) {
-#ifdef ADVANCED_STUFF
-		return kinect.getDepthPixels();
-#endif
-	} else {
-		unsigned char *pix = camera.getPixels().getData();
-		if(pix==NULL) return NULL;
-		int numPixels = width*height;
-		for(int i = 0; i < numPixels; i++) {
-			greyscaleBuffer[i] = pix[i*3];
-		}
-		return greyscaleBuffer;
-	}
-	return NULL;
-}
+class AboutPage: public Reactickle, public SimpleButtonListener {
+public:
+	void start() ;
+	void draw();
+	void buttonPressed(string name) ;
+	
+	ImageObject bgImage;
+	ImageObject aboutImage;
+	ImageObject logo;
+	ImageObject aboutContent;
+	
+
+	SimpleButton reacticklesLink;
+	SimpleButton videoButton;
+	SimpleButton twitterButton;
+	SimpleButton flickrButton;
+	SimpleButton vimeoButton;
+
+	
+};

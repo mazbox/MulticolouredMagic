@@ -27,79 +27,85 @@
  */
 
 /**
- * ReactickleButton.cpp
+ * SettingsPage.mm
  * ReacticklesMagic
  *
- * Created by Marek Bereza on 26/04/2011.
+ * Created by Marek Bereza on 27/04/2011.
  *
  */
 
-#include "ReactickleButton.h"
+#include "SettingsPage.h"
+#include "constants.h"
 #include "ImageCache.h"
 #include "constants.h"
 
-ReactickleButton::ReactickleButton(string name) {
-	this->setup(name);
-	this->name = name;
-	listener = NULL;
-	currTouchId = -1;
-	down = false;
-}
-void ReactickleButton::setup(string name) {
-	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
-	width = screenshot->getWidth();
-	height = screenshot->getHeight();
+void SettingsPage::setup() {
 	
-	//height *= 0.8;
-	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
-}
-void ReactickleButton::draw() {
-	if(down) {
-		ofSetHexColor(0x999999);
+	settingsTitle.setup(ofVec2f(39, 110), IMAGE_ROOT + "settingsTitle.png");	
+	colourPickerTitle.setup(ofVec2f(273-74, 115+98-44), IMAGE_ROOT + "colourPickerTitle.png");
+	colourText.setup(ofVec2f(116, 424), IMAGE_ROOT + "colourText.png");
+	micLevelText.setup(ofVec2f(725, 675), IMAGE_ROOT + "micLevelText.png");
+	micLevelTitle.setup(ofVec2f(870+20-4, 657-305), IMAGE_ROOT + "micLevelTitle.png");
+	brightnessTitle.setup(ofVec2f(870-126-15, 657-280), IMAGE_ROOT + "brightnessTitle.png");
+	
+	
+	colorPicker.setup();
+	colorPicker.y += 60;
+	colorPicker.x = 41;
+	
+	slider.setup();
+	
+	slider.x = 739;
+	slider.y = 188;
+	
+	volumeSlider.setup();
+	volumeSlider.x = 897;
+	volumeSlider.y = slider.y;
+
+	
+	if(IPAD) {
+		bgImage.setup(ofVec2f(), "img/bg.png");
+	} else if(HI_RES) {
+		bgImage.setup(ofVec2f(), "img/bgIPhone4.png");
 	} else {
-		ofSetHexColor(0xFFFFFF);
+		bgImage.setup(ofVec2f(), "img/bgIPhone.png");
 	}
-	screenshot->draw(x, y, width, height);
+	
+	
+	logo.setup(ofVec2f(), IMAGE_ROOT + "logo.png");
+	logo.x = WIDTH/2 - logo.width/2;
+	logo.y = 35;
+	
+	
+	
+	add(bgImage);	
+	add(colourText);
+	add(micLevelText);
+	add(colorPicker);
+	add(slider);
+	add(brightnessTitle);
+	add(micLevelTitle);
+	add(colourPickerTitle);
+	add(volumeSlider);
+	add(settingsTitle);
+
+	add(logo);
+
+	
+
+
+}
+
+
+void SettingsPage::buttonPressed(string name) {
+	
+}
+
+
+	   
+void SettingsPage::draw() {
+	volumeSlider.setVolume(volume);
+	Reactickle::draw();
 //	ofSetHexColor(0xFF0000);
-//	ofRect(*this);
-//	ofDrawBitmapString(name, x, y);
-}
-
-void ReactickleButton::setListener(ReactickleButtonListener *listener) {
-	this->listener = listener;
-}
-
-
-bool ReactickleButton::touchDown(float xx, float yy, int tid) {
-	if(inside(xx, yy)) {
-		currTouchId = tid;
-		down = true;
-		startX = xx;
-	}
-	
-	return down;
-}
-
-bool ReactickleButton::touchMoved(float xx, float yy, int tid) {
-	if(inside(xx, yy) && tid==currTouchId) {
-		down = true;
-	} else {
-		down = false;
-	}
-	return down;
-}
-
-bool ReactickleButton::touchUp(float xx, float yy, int tid) {
-	
-	
-	if(currTouchId==tid) {
-		currTouchId = -1;
-		down = false;
-		if(inside(xx, yy) && ABS(startX - xx)<10) {
-			//printf("%d\n", ABS(startX - xx));
-			if(listener!=NULL) listener->reactickleSelected(name);
-		}
-	}
-	return down;
-	
+//	ofRect(0, 0, ofMap(volume, 0, 1, 0, WIDTH), 20);
 }

@@ -50,7 +50,7 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	currentApp = NULL;
 	gain = 1;
 	crossFadeStartTime = -100;
-//	volumeThreshold = 0.3;
+
 	volume = 0;
 	setupGraphics();
 	setupOrientation();
@@ -67,7 +67,10 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	ofxiPhoneAlerts.addListener(this);
 #else
 	setDataPathRootToAppContents(appName);
+
+#ifdef ADVANCED_STUFF
     setupOSC(); //osc too
+#endif
 //	webserver.start("htdocs/", 8080);
 //	webserver.addHandler(this, "/action");
 #endif
@@ -75,12 +78,11 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	ofSoundStreamSetup(0, 1, this, 44100, 1024, 1);
 }
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 void ReactickleApp::setupOSC(){
     // open an outgoing connection to HOST:PORT
     sender.setup( HOST, PORT );
 }
-string nextOneToLaunch = "";
 /*void ReactickleApp::httpGet(string url) {
 	printf("%s\n", url.c_str());
 	httpRedirect("index.html?reactickle="+getRequestParameter("reactickle"));
@@ -88,6 +90,7 @@ string nextOneToLaunch = "";
 	nextOneToLaunch = getRequestParameter("reactickle");
 }*/
 #endif
+string nextOneToLaunch = "";
 
 
 
@@ -189,7 +192,7 @@ void ReactickleApp::switchReactickle(Reactickle *reactickle) {
 
 	currentApp->start();
 	if(isReactickle(currentApp)) {
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 		ofxOscMessage m;
 		m.setAddress( "/reacticklechange" );
 		//m.addStringArg( reactickleNumber );
@@ -216,6 +219,7 @@ void ReactickleApp::mouseDragged(int x, int y, int button) {
 	if(FAKE_GAME_MODE) centerer.transformMouse(touch.x, touch.y);
 	this->touchMoved(touch);
 }
+
 void ReactickleApp::mousePressed(int x, int y, int button) {
 	ofTouchEventArgs touch;
 	touch.x = x;
@@ -232,10 +236,6 @@ void ReactickleApp::mouseReleased(int x, int y, int button) {
 	if(FAKE_GAME_MODE) centerer.transformMouse(touch.x, touch.y);
 	this->touchUp(touch);
 }
-
-
-
-
 #endif
 
 
@@ -248,7 +248,7 @@ void ReactickleApp::touchDown(ofTouchEventArgs &touch){
 			return;
 		}
 	}
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchdown" );
@@ -270,7 +270,7 @@ void ReactickleApp::touchMoved(ofTouchEventArgs &touch){
 		}
 	}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchmoved" );
@@ -292,7 +292,7 @@ void ReactickleApp::touchUp(ofTouchEventArgs &touch){
 		}
 	}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	if(isReactickle(currentApp)) {
 		ofxOscMessage m;
 		m.setAddress( "/touchup" );
@@ -324,7 +324,7 @@ void ReactickleApp::deviceOrientationChanged(int newOrientation){
 
 }
 void ReactickleApp::setupGraphics() {
-	ofEnableNormalizedTexCoords();
+//	ofEnableNormalizedTexCoords();
 	ofBackground(0, 0, 0);
 	ofSetFrameRate(30.f);
 	ofEnableAlphaBlending();
@@ -364,7 +364,6 @@ void ReactickleApp::audioReceived( float * input, int bufferSize, int nChannels 
 	else volume *= 0.96;
 
 	if(currentApp!=NULL) {
-		//volume *= gain;
 		currentApp->audioReceived(input, bufferSize, nChannels);
 	}
 }

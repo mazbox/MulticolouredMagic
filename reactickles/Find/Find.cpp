@@ -39,7 +39,9 @@
     #include "ColorPicker.h"
 #endif
 #include "Settings.h"
+#ifdef ADVANCED_STUFF
 #include "ofxOsc.h"
+#endif
 #include "ReactickleApp.h"
 
 
@@ -87,7 +89,7 @@ void Find::newShapePositionAndColour(){
 		currShapeID = MAGIC_CIRCLE;
 	}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxOscMessage m;
 	m.setAddress( "/shapechange" );
 	m.addIntArg( currShapeID );

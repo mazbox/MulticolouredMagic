@@ -55,7 +55,7 @@ void Follow::clap() {
             currShapeId %= NUM_MAGIC_SHAPES;                
         }
         
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
         ofxOscMessage m;
         m.setAddress( "/shapechange" );
         m.addIntArg( currShapeId );
@@ -155,7 +155,7 @@ void Follow::draw() {
 	ofSetColor(100, 100, 100, 40);
 	for(int i = 0; i < touches.size(); i++) {
 		ofVec2f left = ofVec2f(touches[i].x, touches[i].y);
-		ofCircle(left, 10);
+		ofDrawCircle(left, 10);
 	}
 }
 

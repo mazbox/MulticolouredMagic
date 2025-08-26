@@ -27,79 +27,45 @@
  */
 
 /**
- * ReactickleButton.cpp
+ * SettingsPage.h
  * ReacticklesMagic
  *
- * Created by Marek Bereza on 26/04/2011.
+ * Created by Marek Bereza on 27/04/2011.
  *
  */
+#pragma once
+#include "Reactickle.h"
+#ifndef _WIN32
+#include "ColorPicker.h"
+#else
+#include "gui/ColorPicker.h"
+#endif
+#include "SimpleButton.h"
+#include "BrightnessSlider.h"
+#include "VolumeSlider.h"
+#include "ImageObject.h"
 
-#include "ReactickleButton.h"
-#include "ImageCache.h"
-#include "constants.h"
-
-ReactickleButton::ReactickleButton(string name) {
-	this->setup(name);
-	this->name = name;
-	listener = NULL;
-	currTouchId = -1;
-	down = false;
-}
-void ReactickleButton::setup(string name) {
-	screenshot = ImageCache::getImage(IMAGE_ROOT+"apps/"+name+".png");
-	width = screenshot->getWidth();
-	height = screenshot->getHeight();
-	
-	//height *= 0.8;
-	border.setup(ImageCache::getImage("img/dropShadow.png"), 4);
-}
-void ReactickleButton::draw() {
-	if(down) {
-		ofSetHexColor(0x999999);
-	} else {
-		ofSetHexColor(0xFFFFFF);
-	}
-	screenshot->draw(x, y, width, height);
-//	ofSetHexColor(0xFF0000);
-//	ofRect(*this);
-//	ofDrawBitmapString(name, x, y);
-}
-
-void ReactickleButton::setListener(ReactickleButtonListener *listener) {
-	this->listener = listener;
-}
+class SettingsPage: public Reactickle, public SimpleButtonListener {
+public:
+	void setup();
+	void buttonPressed(string name);
+	ColorPicker colorPicker;
+	BrightnessSlider slider;
+	VolumeSlider volumeSlider;
 
 
-bool ReactickleButton::touchDown(float xx, float yy, int tid) {
-	if(inside(xx, yy)) {
-		currTouchId = tid;
-		down = true;
-		startX = xx;
-	}
-	
-	return down;
-}
+	ImageObject bgImage;
 
-bool ReactickleButton::touchMoved(float xx, float yy, int tid) {
-	if(inside(xx, yy) && tid==currTouchId) {
-		down = true;
-	} else {
-		down = false;
-	}
-	return down;
-}
+	ImageObject micLevelText;
+	ImageObject colourText;
 
-bool ReactickleButton::touchUp(float xx, float yy, int tid) {
-	
-	
-	if(currTouchId==tid) {
-		currTouchId = -1;
-		down = false;
-		if(inside(xx, yy) && ABS(startX - xx)<10) {
-			//printf("%d\n", ABS(startX - xx));
-			if(listener!=NULL) listener->reactickleSelected(name);
-		}
-	}
-	return down;
-	
-}
+	ImageObject brightnessTitle;
+	ImageObject micLevelTitle;
+
+	ImageObject settingsTitle;
+	ImageObject colourPickerTitle;
+	ImageObject logo;
+
+	void draw();
+
+};

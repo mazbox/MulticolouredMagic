@@ -133,7 +133,7 @@ void Expand::draw() {
 bool Expand::touchDown(float x, float y, int touchId){
 
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxOscMessage simpleMessage;
 #endif
 	switch (mode) {
@@ -149,7 +149,7 @@ bool Expand::touchDown(float x, float y, int touchId){
 			}else{
 				shapeType = 2;
 			}
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 			simpleMessage.setAddress( "/shapechange" );
 			simpleMessage.addIntArg( shapeType );
 			ReactickleApp::instance->sender.sendMessage( simpleMessage );
@@ -200,7 +200,7 @@ void Expand::nextShape(){
 	if(currentShapeType >= NUM_MAGIC_SHAPES || currentShapeType < 0) { //safety!
 		currentShapeType = 0;
 	}
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxOscMessage m;
 	m.setAddress( "/shapechange" );
 	m.addIntArg( currentShapeType );

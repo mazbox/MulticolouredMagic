@@ -44,17 +44,17 @@ string dateTimeString() {
 	+ padZeros(ofGetHours()) +"-"+padZeros(ofGetMinutes()) +"-"+
 	padZeros(ofGetSeconds());
 }
+#include <unistd.h>
+#include <Foundation/Foundation.h>
+
 void setDataPathRootToAppContents(string appName) {
 // do nothing if we're in windows.
 #ifndef _WIN32
-	char path[512];
-	getcwd(path, 512);
-	string dataRoot = path;
-	if(dataRoot.find(".app/Contents")==-1) {
-		dataRoot += "/" + appName + ".app/Contents/MacOS";
-	}
-	dataRoot += "/../data/";
-	ofSetDataPathRoot(dataRoot);
+	NSString *a	  = [[NSBundle mainBundle] resourcePath];
+			std::string s = [a UTF8String];
+			s += "/data/";
+	ofSetDataPathRoot(s);
+	printf("Setting log path contents to %s", s.c_str());
 #endif
 }
 

@@ -103,7 +103,7 @@ void Flip::update() {
                 currShapeId %= NUM_MAGIC_SHAPES;
             }
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
             ofxOscMessage m;
             m.setAddress( "/shapechange" );
             m.addIntArg( currShapeId );
@@ -155,7 +155,7 @@ bool Flip::touchUp(float x, float y, int touchId) {
 }
 
 void Flip::modeChanged() {
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
     ofxOscMessage m;
     m.setAddress("/modechange");
     m.addIntArg( mode );
