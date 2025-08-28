@@ -86,7 +86,7 @@ void Mirror::update() {
 		image.scaleIntoMe(*colorImg);
 
 		int numPixels = image.getWidth()*image.getHeight()*3;
-		unsigned char *pixels = image.getPixels();
+		unsigned char *pixels = image.getPixels().getData();
 		if(type==MIRROR_AMBIENT_LAPSE) {
 
 			// blend previous frames

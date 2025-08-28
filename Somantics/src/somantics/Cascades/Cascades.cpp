@@ -123,7 +123,7 @@ void Cascades::draw(){
 		
 		ofSetColor(0, 0, 255);
 		ofFill();
-		vector <ofPoint>::iterator pit = bodyShape->getVertices().begin();
+		auto pit = bodyShape->getVertices().begin();
 		while(pit != bodyShape->getVertices().end() )
 		{
 			ofCircle(pit->x, pit->y, 30);
@@ -158,13 +158,13 @@ void Cascades::checkBlobs()
 		}
 		
 		bodyShape = new ofxBox2dPolygon();
-		ofVec2f scaleUp(ofGetWidth()/320, ofGetHeight()/240);
+		ofVec3f scaleUp(ofGetWidth()/320, ofGetHeight()/240, 1.f);
 		
-		vector <ofPoint>::iterator pit = largest.pts.begin();
+		auto pit = largest.pts.begin();
 		while(pit != largest.pts.end() )
 		{
 			// triangulatePolygonWithOutline(resampled, outline);??
-			bodyShape->addVertex( *pit * scaleUp );
+			bodyShape->addVertex( (*pit) * scaleUp );
 			++pit;
 		}
 		
@@ -193,10 +193,10 @@ void Cascades::mouseDragged(int x, int y, int button){
 		ofVec2f lr( x + 50.f, y+50.f);
 		ofVec2f ll( x - 50.f, y+50.f);
 		
-		bodyShape->addVertex(ul);
-		bodyShape->addVertex(ur);
-		bodyShape->addVertex(lr);
-		bodyShape->addVertex(ll);
+		bodyShape->addVertex(ul.x, ul.y, 0.f);
+		bodyShape->addVertex(ur.x, ur.y, 0.f);
+		bodyShape->addVertex(lr.x, lr.y, 0.f);
+		bodyShape->addVertex(ll.x, ll.y, 0.f);
 		
 		bodyShape->create(box2d.getWorld());
 		
@@ -219,10 +219,10 @@ void Cascades::mousePressed(int x, int y, int button){
 		ofVec2f lr( x + 50.f, y+50.f);
 		ofVec2f ll( x - 50.f, y+50.f);
 		
-		bodyShape->addVertex(ul);
-		bodyShape->addVertex(ur);
-		bodyShape->addVertex(lr);
-		bodyShape->addVertex(ll);
+		bodyShape->addVertex(ul.x, ul.y, 0.f);
+		bodyShape->addVertex(ur.x, ur.y, 0.f);
+		bodyShape->addVertex(lr.x, lr.y, 0.f);
+		bodyShape->addVertex(ll.x, ll.y, 0.f);
 		
 		bodyShape->create(box2d.getWorld());
 	

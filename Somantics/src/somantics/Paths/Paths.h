@@ -83,13 +83,13 @@ public:
 	}
 		
 };
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxBlobTracker.h"
 #endif
 
 class Paths : public Reactickle
-#ifndef TARGET_OF_IPHONE
-, public ofxBlobListener 
+#ifdef ADVANCED_STUFF
+, public ofxBlobListener
 #endif
 {
 
@@ -102,14 +102,14 @@ public:
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
 
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 	vector<Path*> paths;
-	map<int, Path*> touchToPath;
+	std::map<int, Path*> touchToPath;
 	BrushedLine brushedLine;
 	ofImage *blob;
 	ofImage *finger;
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxBlobTracker tracker;
 	void blobEntered(ofVec3f pos, int blobId) { touchDown(pos.x*WIDTH, pos.y*HEIGHT, blobId); }
 	void blobMoved(ofVec3f pos, int blobId) { touchMoved(pos.x*WIDTH, pos.y*HEIGHT, blobId); }

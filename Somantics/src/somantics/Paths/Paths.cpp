@@ -43,7 +43,7 @@ void Paths::setup(){
 	finger = ImageCache::getImage("img/blob.png");
 	brushedLine.setup(blob, 20);
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	tracker.addListener(this);
 #endif
 }
@@ -52,7 +52,7 @@ void Paths::setup(){
 //--------------------------------------------------------------
 void Paths::update(){
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 10, false);
 
 	vector<ofVec2f> blobs;
@@ -66,8 +66,7 @@ void Paths::update(){
 
 	ofVec2f offset(0, -10);
 	// loop through touchToPath and add points to each path
-	map<int, Path*>::iterator it;
-	for(it = touchToPath.begin(); it != touchToPath.end(); it++) {
+	for(auto it = touchToPath.begin(); it != touchToPath.end(); it++) {
 		int touchId = (*it).first;
 		Path *path = (*it).second;
 		path->addPoint(touches[touchId]);
@@ -95,13 +94,13 @@ void Paths::draw(){
 	mesh.setMode(OF_PRIMITIVE_TRIANGLE_STRIP);
 
 	mesh.addColor(top);
-	mesh.addVertex(ofVec2f(0, 0));
+	mesh.addVertex(ofVec3f(0, 0, 0));
 	mesh.addColor(top);
-	mesh.addVertex(ofVec2f(WIDTH, 0));
+	mesh.addVertex(ofVec3f(WIDTH, 0, 0));
 	mesh.addColor(bottom);
-	mesh.addVertex(ofVec2f(0, HEIGHT));
+	mesh.addVertex(ofVec3f(0, HEIGHT, 0));
 	mesh.addColor(bottom);
-	mesh.addVertex(ofVec2f(WIDTH, HEIGHT));
+	mesh.addVertex(ofVec3f(WIDTH, HEIGHT, 0));
 
 	ofSetHexColor(0xFFFFFF);
 	mesh.draw();
@@ -111,7 +110,7 @@ void Paths::draw(){
 	}
 
 	ofSetHexColor(0);
-	map<int,ofVec2f>::iterator it;
+	std::map<int,ofVec2f>::iterator it;
 	for(it = touches.begin(); it != touches.end(); it++) {
 		finger->draw((*it).second.x-20, (*it).second.y-20, 40, 40);
 	}

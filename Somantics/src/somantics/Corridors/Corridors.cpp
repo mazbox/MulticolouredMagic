@@ -48,7 +48,7 @@ void Corridors::setup(){
 	}	
 	
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	tracker.addListener(this);
 #endif
 	
@@ -56,7 +56,7 @@ void Corridors::setup(){
 
 //--------------------------------------------------------------
 void Corridors::update(){
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	contourFinder.findContours(*threshImg, 40*40, VISION_WIDTH*VISION_HEIGHT, 10, false);
 	
 	vector<ofVec3f> blobs;

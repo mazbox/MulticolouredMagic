@@ -85,10 +85,10 @@ void ofxBox2dPolygon::updateShape() {
 
 //----------------------------------------
 void ofxBox2dPolygon::addTriangle(const ofVec2f &a, const ofVec2f &b, const ofVec2f &c) {
-	addVertex(a); addVertex(b);	addVertex(c);
+	addVertex(a.x, a.y); addVertex(b.x, b.y);	addVertex(c.x, c.y);
 	
 	// dont forget to close it
-	addVertex(a);
+	addVertex(a.x, a.y);
 	close();
 }
 

@@ -37,52 +37,59 @@ int HEIGHT = 320;
 float WIDTH_SCALE = 1;
 float HEIGHT_SCALE = 1;
 
-bool RETINA = false;
-bool IPAD = false;
-bool HI_RES = false;
+bool RETINA = true;
+bool IPAD = true;
+bool HI_RES = true;
 bool FAKE_GAME_MODE = false;
 bool HAS_CAMERA = true;
 
-string IMAGE_ROOT;
-string APP_NAME;
+string IMAGE_ROOT = "images4/";
+
+string APP_NAME = "openFrameworks";
 //#define DEBUG_MODE
 
 
 int main(){
-	APP_NAME = "openFrameworks"; // rename me!
 #ifdef TARGET_OF_IPHONE
-	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-		if ([[UIScreen mainScreen] scale] > 1) {
-			RETINA = true;
-		}
-	}
 	
 	WIDTH = [[UIScreen mainScreen] bounds].size.width;
 	HEIGHT = [[UIScreen mainScreen] bounds].size.height;
 	
 	if(WIDTH<HEIGHT) {
-		int temp = WIDTH;
-		WIDTH = HEIGHT;
-		HEIGHT = temp;
+		std::swap(WIDTH, HEIGHT);
 	}
 	
-	if(!RETINA) {
-		if([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
-			IPAD = [[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPad;
-		}
-	}
+
 	printf("WIDTH: %d    HEIGHT: %d\n", WIDTH, HEIGHT);
+
 	
-	if(IPAD||RETINA) {
-		IMAGE_ROOT = "images4/";
-		HI_RES = true;
-	} else {
-		HI_RES = false;
-		IMAGE_ROOT = "images/";
-	}
+	ofiOSWindowSettings settings;
+	settings.enableRetina = true; // enables retina resolution if the device supports it.
+	settings.enableDepth = false; // enables depth buffer for 3d drawing.
+//	settings.enableAntiAliasing = false; // enables anti-aliasing which smooths out graphics on the screen.
+//	settings.numOfAntiAliasingSamples = 0; // number of samples used for anti-aliasing.
+	settings.enableHardwareOrientation = false; // enables native view orientation.
+	settings.enableHardwareOrientationAnimation = false; // enables native orientation changes to be animated.
+//	settings.glesVersion = OFXIOS_RENDERER_ES2; // type of renderer to use, ES1, ES2, ES3
+//	settings.windowControllerType = ofxiOSWindowControllerType::GL_KIT; // Window Controller Type
+	settings.colorType = ofxiOSRendererColorFormat::RGBA8888; // color format used default RGBA8888
+	settings.depthType = ofxiOSRendererDepthFormat::DEPTH_NONE; // depth format (16/24) if depth enabled
+	settings.stencilType = ofxiOSRendererStencilFormat::STENCIL_NONE; // stencil mode
+	settings.enableMultiTouch = true; // enables multitouch support and updates touch.id etc.
+//	ofCreateWindow(settings);
 	
-	printf("retina? %d    iPad? %d    hi-res? %d\n", RETINA, IPAD, HI_RES);
-#else 
+	auto fullscreenType = OF_FULLSCREEN;
+//	fullscreenType = OF_WINDOW;
+//	ofSetupOpenGL(WIDTH, HEIGHT, fullscreenType);			// <-------- setup the GL context
+
+	settings.glesVersion = 1;
+
+	settings.setSize(WIDTH, HEIGHT);
+	settings.windowMode = fullscreenType;
+	ofCreateWindow(settings);
+	
+	
+#else
 	//WIDTH_SCALE = 2;
 	//HEIGHT_SCALE = 2;
 	WIDTH = 1024;
@@ -90,10 +97,9 @@ int main(){
 	HI_RES = true;
 	RETINA = false;
 	IPAD = true;
-	IMAGE_ROOT = "images4/";
 	//FAKE_GAME_MODE = true;
 	printf("SETTED HERE!!!!!\n\n\n\n");
-#endif
+
 	
 	WIDTH_SCALE = (float)WIDTH/480.f;
 	HEIGHT_SCALE = (float)HEIGHT/320.f;
@@ -101,12 +107,14 @@ int main(){
 	auto fullscreenType = OF_FULLSCREEN;
 	fullscreenType = OF_WINDOW;
 	ofSetupOpenGL(WIDTH, HEIGHT, fullscreenType);			// <-------- setup the GL context
-	
+#endif
+
 	
 
 	// this kicks off the running of my app
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
 	ofRunApp( new testApp());
+
 	
 }

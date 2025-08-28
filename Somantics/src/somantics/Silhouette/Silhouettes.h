@@ -31,7 +31,7 @@
 #include "ofMain.h"
 #include "Silhouette.h"
 #include "Reactickle.h"
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #define USE_FBO
 #endif
 // still can't get this to work!!!
@@ -52,12 +52,12 @@ public:
 	bool touchDown(float x, float y, int touchId);
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxCvContourFinder contourFinder;
 	bool needsKinect() { return true; }
 #endif
 	
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 	vector<Silhouette> silhouettes;
 	
 	

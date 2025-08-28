@@ -43,7 +43,7 @@ void Streams::setup()
 void Streams::update()
 {
 
-	vector<ofPoint>::iterator ip = lLine.getVertices().begin();
+	auto ip = lLine.getVertices().begin();
 	while( ip != lLine.getVertices().end() ) {
 		ip->y -= 1;
 		++ip;

@@ -44,7 +44,7 @@
 
 
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxSimpleGuiToo.h"
 #include "TuioKinect.h"
 #include "ofxTuioClient.h"

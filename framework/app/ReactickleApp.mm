@@ -60,8 +60,6 @@ void ReactickleApp::setupApp(ReactickleApp *instance, string appName) {
 	ofAddListener(ofEvents().touchMoved, this, &ReactickleApp::touchMoved);
 	ofAddListener(ofEvents().touchUp, this, &ReactickleApp::touchUp);
 
-	// initialize the accelerometer
-	ofxAccelerometer.setup();
 
 	//iPhoneAlerts will be sent to this.
 	ofxiPhoneAlerts.addListener(this);
@@ -324,7 +322,7 @@ void ReactickleApp::deviceOrientationChanged(int newOrientation){
 
 }
 void ReactickleApp::setupGraphics() {
-//	ofEnableNormalizedTexCoords();
+//	ofSetOrientation(OF_ORIENTATION_90_LEFT);
 	ofBackground(0, 0, 0);
 	ofSetFrameRate(30.f);
 	ofEnableAlphaBlending();
@@ -333,21 +331,21 @@ void ReactickleApp::setupGraphics() {
 
 
 void ReactickleApp::updateOrientation() {
-#ifdef TARGET_OF_IPHONE
-	int orientation = [[UIDevice currentDevice] orientation];
-	int orient = ofxiOSGetOrientation();
-	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
-
-	if(orientation!=currOrientation || orient==ofxiOS_ORIENTATION_PORTRAIT || orient==ofxiOS_ORIENTATION_UPSIDEDOWN) {
-		if(orientation==UIDeviceOrientationLandscapeLeft) {
-			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
-		} else if(orientation==UIDeviceOrientationLandscapeRight) {
-			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
-		}
-	}
-
-	currOrientation = orientation;
-#endif
+//#ifdef TARGET_OF_IPHONE
+//	int orientation = [[UIDevice currentDevice] orientation];
+//	int orient = ofxiOSGetOrientation();
+//	//printf("Phone orientation: %d, window orientation %d\n", orientation, orient);
+//
+//	if(orientation!=currOrientation || orient==ofxiOS_ORIENTATION_PORTRAIT || orient==ofxiOS_ORIENTATION_UPSIDEDOWN) {
+//		if(orientation==UIDeviceOrientationLandscapeLeft) {
+//			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
+//		} else if(orientation==UIDeviceOrientationLandscapeRight) {
+//			ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
+//		}
+//	}
+//
+//	currOrientation = orientation;
+//#endif
 }
 
 
@@ -370,26 +368,26 @@ void ReactickleApp::audioReceived( float * input, int bufferSize, int nChannels 
 
 
 void ReactickleApp::exit(){
-#ifdef TARGET_OF_IPHONE
-	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-#endif
+//#ifdef TARGET_OF_IPHONE
+//	[[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+//#endif
 }
 
 void ReactickleApp::setupOrientation() {
-#ifdef TARGET_OF_IPHONE
-	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-
-	int orientation = [[UIDevice currentDevice] orientation];
-
-
-	if(orientation==UIDeviceOrientationLandscapeLeft) {
-		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
-	} else if(orientation==UIDeviceOrientationLandscapeRight) {
-		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
-	} else { // default
-		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
-	}
-
-	currOrientation = UIDeviceOrientationPortrait;
-#endif
+//#ifdef TARGET_OF_IPHONE
+//	[[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+//
+//	int orientation = [[UIDevice currentDevice] orientation];
+//
+//
+//	if(orientation==UIDeviceOrientationLandscapeLeft) {
+//		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_RIGHT);
+//	} else if(orientation==UIDeviceOrientationLandscapeRight) {
+//		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
+//	} else { // default
+//		ofxiOSSetOrientation(ofxiOS_ORIENTATION_LANDSCAPE_LEFT);
+//	}
+//
+//	currOrientation = UIDeviceOrientationPortrait;
+//#endif
 }

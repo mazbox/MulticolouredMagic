@@ -45,12 +45,12 @@ class Tunnel : public Reactickle {
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
 
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 	vector<Silhouette> silhouettes;
 	vector<vector<ofVec2f> > history;
 	BrushedLine brushedLine;
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxCvContourFinder contourFinder;
 	bool needsKinect() { return true; }
 #endif

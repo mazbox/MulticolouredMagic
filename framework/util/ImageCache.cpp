@@ -61,7 +61,7 @@ ofImage *ImageCache::getImage(string path) {
 	}
 
 	if(!guiResFileExists(ofToDataPath(path, true))) {
-		printf("File doesn't exist %s\n", ofToDataPath(path).c_str());
+		printf("File doesn't exist %s\n", ofToDataPath(path, true).c_str());
 #ifdef IMAGECACHE_STRICT
 		return NULL;
 #else

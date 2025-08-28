@@ -73,6 +73,8 @@ void MainMenu::setup() {
 	
 	if(IPAD) {
 		bgImage.setup(ofVec2f(), "img/bg.png");
+		bgImage.width = WIDTH;
+		bgImage.height = HEIGHT;
 	} else if(HI_RES) {
 		bgImage.setup(ofVec2f(), "img/bgIPhone4.png");
 	} else {
@@ -129,7 +131,6 @@ void MainMenu::arrange() {
 
 void MainMenu::draw() {
 	ofSetHexColor(0xFFFFFF);
-
 
 	arrange();
 	

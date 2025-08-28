@@ -31,7 +31,7 @@
 #include "ofMain.h"
 #include "Windmill.h"
 #include "Reactickle.h"
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxCvOpticalFlowLK.h"
 #endif
 class Windmills : public Reactickle {
@@ -47,7 +47,7 @@ class Windmills : public Reactickle {
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxCvOpticalFlowLK opticalFlow;
 	bool needsKinect() { return true; }
 	ofxCvGrayscaleImage grey;
@@ -55,7 +55,7 @@ class Windmills : public Reactickle {
 	ofxCvGrayscaleImage prev;
 	
 #endif
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 	vector<Windmill> windmills;
 	int windmillsX;
 	int windmillsY;

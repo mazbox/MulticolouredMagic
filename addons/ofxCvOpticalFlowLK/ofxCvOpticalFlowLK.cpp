@@ -57,7 +57,7 @@ void ofxCvOpticalFlowLK::setCalcStep(int _cols, int _rows){
 }
 
 void ofxCvOpticalFlowLK::calc( ofxCvGrayscaleImage & pastImage, ofxCvGrayscaleImage & currentImage, int size) {
-	cvCalcOpticalFlowLK( pastImage.getCvImage(), currentImage.getCvImage(),	cvSize( size, size), vel_x, vel_y );
+//	cvCalcOpticalFlowLK( pastImage.getCvImage(), currentImage.getCvImage(),	cvSize( size, size), vel_x, vel_y );
 }
 
 void ofxCvOpticalFlowLK::draw(void){

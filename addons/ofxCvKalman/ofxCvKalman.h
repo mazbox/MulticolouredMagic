@@ -9,7 +9,7 @@
 #define OFXCVKALMAN_H_
 
 #include "ofxOpenCv.h"
-
+#include "opencv2/video/tracking.hpp"
 class ofxCvKalman {
 public:
 	ofxCvKalman(float initial);

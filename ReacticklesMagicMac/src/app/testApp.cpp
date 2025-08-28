@@ -151,15 +151,16 @@ void testApp::draw(){
 	
 	// this is more to reset the blend mode
 	ofEnableAlphaBlending();
+	
 	// if we're running on the retina display,
 	// the openGL coordinates aren't pixel coordinates
 	// (it's still 480x320 on a 960x640 iphone4 display)
 	// so this scales the modelview so we can always use
 	// pixel coordinates.
-	if(RETINA) { 
+//	if(RETINA) { 
 		glPushMatrix();
-		glScalef(0.5, 0.5, 1);
-	}
+		glScalef(2,2, 1);
+//	}
 	
 
 	if(FAKE_GAME_MODE) centerer.begin();	
@@ -192,9 +193,9 @@ void testApp::draw(){
 	
 	
 	// pops the pixel coordinates scaling stuff.
-	if(RETINA) {
+//	if(RETINA) {
 		glPopMatrix();
-	}
+//	}
 	
 #ifdef ADVANCED_STUFF
 	// do the screenshot

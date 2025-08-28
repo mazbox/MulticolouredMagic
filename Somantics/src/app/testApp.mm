@@ -32,7 +32,7 @@
 bool flipX = true;
 bool flipImage = false;
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "util.h"
 #include "ofxSimpleGuiToo.h"
 
@@ -47,7 +47,7 @@ void testApp::setup(){
 
 	setupApp(this, "Somantics");
 
-#ifdef TARGET_OF_IPHONE
+#ifndef ADVANCED_STUFF
 	
 	// if we're ont the iphone, we want to double check there's a camera
 	NSArray * devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -105,7 +105,7 @@ void testApp::setup(){
 
 //--------------------------------------------------------------
 void testApp::update(){
-	updateOrientation();
+//	updateOrientation();
 	if(currentApp!=NULL) {
 		currentApp->volume = volume;
 		currentApp->volumeThreshold = VOLUME_THRESHOLD;
@@ -123,7 +123,7 @@ void testApp::update(){
 				colorImg.mirror(false, flipX);
 #endif
 				currentApp->colorImg = &colorImg;
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 				depthImg.setFromPixels(kinect.getDepthPixels(), kinect.getWidth(), kinect.getHeight());
 				depthImg.mirror(false, flipX);
 				threshImg = depthImg;
@@ -186,7 +186,7 @@ void testApp::draw(){
 	if(RETINA) {
 		glPopMatrix();
 	}
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	gui.draw();
 #endif
 	ofEnableAlphaBlending(); // for gui stuff
@@ -223,7 +223,7 @@ void testApp::showSettings() {
 
 
 void testApp::keyPressed(int key) {
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	switch(key) {
 		case ' ': 
 			gui.toggleDraw();

@@ -45,7 +45,7 @@
 
 
 // for now we comment this out for reactickles and include for somantics
-//#define USES_CAMERA
+#define USES_CAMERA
 
 #ifdef USES_CAMERA
 #include "ofxOpenCv.h"

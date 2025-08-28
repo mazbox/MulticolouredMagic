@@ -112,5 +112,5 @@ public:
 	float minTouchDistance;
 	float fingerWidth;
 	float startX, endX;
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 };

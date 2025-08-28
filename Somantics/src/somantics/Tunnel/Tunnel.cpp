@@ -34,7 +34,7 @@
 #else
 #include "ColorPicker.h"
 #endif
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "contourutils.h"
 #endif
 #define BRUSHED_LINE_SIZE 6
@@ -73,7 +73,7 @@ void Tunnel::update(){
 		//printf("max dist: %f\n", maxDistSquared);
 
 	}
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	if(threshImg!=NULL) {
 		contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 20, false);
 	}
@@ -107,7 +107,7 @@ void Tunnel::draw(){
 		brushedLine.drawLines(history[i], true);
 	}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	silhouettes.clear();
 	Silhouette s;
 
@@ -168,7 +168,7 @@ void Tunnel::draw(){
 }
 
 bool Tunnel::touchDown(float x, float y, int touchId) {
-#ifdef TARGET_OF_IPHONE
+#ifndef ADVANCED_STUFF
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchDown(x,y,touchId)) {
 			return true;
@@ -183,7 +183,7 @@ bool Tunnel::touchDown(float x, float y, int touchId) {
 }
 
 bool Tunnel::touchUp(float x, float y, int touchId) {
-#ifdef TARGET_OF_IPHONE
+#ifndef ADVANCED_STUFF
 	touches.erase(touchId);
 	for(int i = 0; i < silhouettes.size(); i++) {
 		if(silhouettes[i].touchUp(touchId)) {
@@ -196,7 +196,7 @@ bool Tunnel::touchUp(float x, float y, int touchId) {
 }
 
 bool Tunnel::touchMoved(float x, float y, int touchId) {
-#ifdef TARGET_OF_IPHONE
+#ifndef ADVANCED_STUFF
 	touches[touchId].x = x;
 	touches[touchId].y = y;
 	for(int i = 0; i < silhouettes.size(); i++) {

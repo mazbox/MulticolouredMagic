@@ -60,7 +60,7 @@ void Windmills::setup(){
 		}
 	}
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	opticalFlow.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
 	grey.allocate(VISION_WIDTH, VISION_HEIGHT);
 	curr.allocate(VISION_WIDTH/2, VISION_HEIGHT/2);
@@ -85,7 +85,7 @@ void Windmills::update(){
 		}
 	}*/
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 
 	if(colorImg!=NULL) {
 		grey = *colorImg;

@@ -98,8 +98,8 @@ void Painter::update(){
 			
 			// loop through pixels 
 			//  - add new colour pixels into canvas
-			unsigned char *canvasPixels = canvas.getPixels();
-			unsigned char *diffPixels = grayDiff.getPixels();
+			unsigned char *canvasPixels = canvas.getPixels().getData();
+			unsigned char *diffPixels = grayDiff.getPixels().getData();
 			int r = colours[colourIndex].r;
 			int g = colours[colourIndex].g;
 			int b = colours[colourIndex].b;

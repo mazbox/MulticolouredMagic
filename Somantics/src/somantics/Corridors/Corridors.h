@@ -32,13 +32,13 @@
 #include "Corridor.h"
 #include "Reactickle.h"
 
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 #include "ofxBlobTracker.h"
 #endif
 
 class Corridors : public Reactickle 
-#ifndef TARGET_OF_IPHONE
-, public ofxBlobListener 
+#ifdef ADVANCED_STUFF
+, public ofxBlobListener
 #endif
 
 {
@@ -53,10 +53,10 @@ public:
 	bool touchUp(float x, float y, int touchId);
 	bool touchMoved(float x, float y, int touchId);
 	
-	map<int,ofVec2f> touches;
+	std::map<int,ofVec2f> touches;
 	vector<Corridor> corridors;
 	
-#ifndef TARGET_OF_IPHONE
+#ifdef ADVANCED_STUFF
 	ofxBlobTracker tracker;
 	void blobEntered(ofVec3f pos, int blobId) { 
 		touchDown(pos.x*WIDTH - pos.z/2, pos.y*HEIGHT, blobId); 

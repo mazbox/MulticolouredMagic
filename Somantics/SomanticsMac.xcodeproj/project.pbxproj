@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -75,38 +75,39 @@
 		E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9760E8CC7DD009D7055 /* CoreFoundation.framework */; };
 		E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9770E8CC7DD009D7055 /* CoreServices.framework */; };
 		E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9790E8CC7DD009D7055 /* OpenGL.framework */; };
-		E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */; };
 		E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2421E10CC549C004149E2 /* openFrameworksDebug.a */; };
 		E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424410CC5A17004149E2 /* AppKit.framework */; };
 		E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424510CC5A17004149E2 /* Cocoa.framework */; };
 		E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2424610CC5A17004149E2 /* IOKit.framework */; };
-		E4C2426610CC5A78004149E2 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C2425F10CC5A78004149E2 /* GLUT.framework */; };
-		E4C2426B10CC5AA6004149E2 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E4C2425F10CC5A78004149E2 /* GLUT.framework */; };
 		EA1567371427399F00A9519A /* Tunnel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA1567351427399F00A9519A /* Tunnel.cpp */; };
 		EA15673B142739B900A9519A /* Paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA156739142739B900A9519A /* Paths.cpp */; };
 		EA15673F14273E4A00A9519A /* ofxCvOpticalFlowLK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA15673D14273E4A00A9519A /* ofxCvOpticalFlowLK.cpp */; };
 		EA15674214274BCD00A9519A /* contourutils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA15674014274BCD00A9519A /* contourutils.cpp */; };
 		EA23EDE6139D13AE0071404C /* Apps.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EDD2139D13AE0071404C /* Apps.mm */; };
 		EA23EDE8139D13AE0071404C /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EDD6139D13AE0071404C /* testApp.mm */; };
-		EA23EDEB139D13AE0071404C /* AboutPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EDDF139D13AE0071404C /* AboutPage.mm */; };
 		EA23EDEC139D13AE0071404C /* MainMenu.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EDE1139D13AE0071404C /* MainMenu.mm */; };
 		EA23EDED139D13AE0071404C /* SettingsPage.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA23EDE5139D13AE0071404C /* SettingsPage.mm */; };
-		EA23EEA3139D1CBF0071404C /* ofxCvKalman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA23EE6D139D1CBE0071404C /* ofxCvKalman.cpp */; };
 		EA2B8F7113B0FD1C0040917B /* Painter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B8F6F13B0FD1C0040917B /* Painter.cpp */; };
-		EA2B901113B101890040917B /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B8FFC13B101890040917B /* osc.a */; };
 		EA2B901513B101890040917B /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900513B101890040917B /* ofxOscBundle.cpp */; };
 		EA2B901613B101890040917B /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900713B101890040917B /* ofxOscMessage.cpp */; };
 		EA2B901713B101890040917B /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900913B101890040917B /* ofxOscReceiver.cpp */; };
 		EA2B901813B101890040917B /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA2B900B13B101890040917B /* ofxOscSender.cpp */; };
-		EA2B901B13B1018E0040917B /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA2B901A13B1018E0040917B /* osc.a */; };
-		EA48D25414EAC1080081DF15 /* Settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25314EAC1080081DF15 /* Settings.cpp */; };
-		EA48D25614EAC1110081DF15 /* ReactickleApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */; };
 		EA48D2A014EAC7E20081DF15 /* icon.icns in CopyFiles */ = {isa = PBXBuildFile; fileRef = EA48D29E14EAC7980081DF15 /* icon.icns */; };
-		EA87BA07142896B900A0CCDE /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9F9142896B900A0CCDE /* mongoose.c */; };
-		EA87BA08142896B900A0CCDE /* ofxWebServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9FC142896B900A0CCDE /* ofxWebServer.cpp */; };
-		EA87BA09142896B900A0CCDE /* ofxWSRequestHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA87B9FE142896B900A0CCDE /* ofxWSRequestHandler.cpp */; };
-		EA8AFB9E1427614000AF134D /* ofxBlobSmoother.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8AFB9A1427614000AF134D /* ofxBlobSmoother.cpp */; };
-		EA8AFB9F1427614000AF134D /* ofxBlobTracker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA8AFB9C1427614000AF134D /* ofxBlobTracker.cpp */; };
+		EA77EECD2E60426E00C896EC /* Settings.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA77EECC2E60426E00C896EC /* Settings.mm */; };
+		EA77EECF2E60433B00C896EC /* ReactickleApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA77EECE2E60433B00C896EC /* ReactickleApp.mm */; };
+		EA77EEED2E6043E700C896EC /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EED12E6043E700C896EC /* UdpSocket.cpp */; };
+		EA77EEEF2E6043E700C896EC /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EEE12E6043E700C896EC /* OscOutboundPacketStream.cpp */; };
+		EA77EEF02E6043E700C896EC /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EED02E6043E700C896EC /* NetworkingUtils.cpp */; };
+		EA77EEF12E6043E700C896EC /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EEE62E6043E700C896EC /* OscReceivedElements.cpp */; };
+		EA77EEF22E6043E700C896EC /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EED72E6043E700C896EC /* IpEndpointName.cpp */; };
+		EA77EEF42E6043E700C896EC /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EEE82E6043E700C896EC /* OscTypes.cpp */; };
+		EA77EEF52E6043E700C896EC /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA77EEE42E6043E700C896EC /* OscPrintReceivedElements.cpp */; };
+		EA77EEFB2E606EB900C896EC /* opencv.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EEFA2E606EB900C896EC /* opencv.xcframework */; };
+		EA77EEFD2E606ECB00C896EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EEFC2E606ECB00C896EC /* AVFoundation.framework */; };
+		EA77EEFF2E606ED700C896EC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EEFE2E606ED700C896EC /* CoreVideo.framework */; };
+		EA77EF012E606EE800C896EC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EF002E606EE800C896EC /* CoreMedia.framework */; };
+		EA77EF032E606EFB00C896EC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EF022E606EFB00C896EC /* Accelerate.framework */; };
+		EA77EF052E606F1400C896EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA77EF042E606F1400C896EC /* SystemConfiguration.framework */; };
 		EAB06E5213CB4048004884FC /* Sparkles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB06E5013CB4048004884FC /* Sparkles.cpp */; };
 		EAB309FD137AF3E00086DE6F /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB309F6137AF3E00086DE6F /* tinyxml.cpp */; };
 		EAB309FE137AF3E00086DE6F /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAB309F8137AF3E00086DE6F /* tinyxmlerror.cpp */; };
@@ -122,7 +123,6 @@
 		EAD4931613A8B48D00D312FE /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930813A8B48D00D312FE /* util.cpp */; };
 		EAD4931713A8B48D00D312FE /* KinectOrCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4930B13A8B48D00D312FE /* KinectOrCamera.cpp */; };
 		EAD4938213A8B66800D312FE /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAD4938113A8B66800D312FE /* main.mm */; };
-		EAD4947213A8BA9A00D312FE /* ofxKinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4946513A8BA9A00D312FE /* ofxKinect.cpp */; };
 		EAD4956513A8C5A300D312FE /* ReactickleButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4956313A8C5A300D312FE /* ReactickleButton.cpp */; };
 		EAD4960913A8CD5C00D312FE /* Windmills.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4960013A8CD5C00D312FE /* Windmills.cpp */; };
 		EAD4962B13A8CEF400D312FE /* ofxMultiTouchPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4962913A8CEF400D312FE /* ofxMultiTouchPad.cpp */; };
@@ -130,7 +130,6 @@
 		EAD4968F13A8D2B600D312FE /* Corridors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968613A8D2B600D312FE /* Corridors.cpp */; };
 		EAD4969113A8D2B600D312FE /* Silhouette.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968A13A8D2B600D312FE /* Silhouette.cpp */; };
 		EAD4969213A8D2B600D312FE /* Silhouettes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAD4968C13A8D2B600D312FE /* Silhouettes.cpp */; };
-		EAE5222013AF4775006B1572 /* opencv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE521AD13AF4774006B1572 /* opencv.a */; };
 		EAE5223713AF4775006B1572 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521C913AF4774006B1572 /* ofxCvColorImage.cpp */; };
 		EAE5223813AF4775006B1572 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521CC13AF4774006B1572 /* ofxCvContourFinder.cpp */; };
 		EAE5223913AF4775006B1572 /* ofxCvFloatImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521CE13AF4774006B1572 /* ofxCvFloatImage.cpp */; };
@@ -138,17 +137,6 @@
 		EAE5223B13AF4775006B1572 /* ofxCvHaarFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521D213AF4774006B1572 /* ofxCvHaarFinder.cpp */; };
 		EAE5223C13AF4775006B1572 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521D413AF4774006B1572 /* ofxCvImage.cpp */; };
 		EAE5223D13AF4775006B1572 /* ofxCvShortImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE521D713AF4774006B1572 /* ofxCvShortImage.cpp */; };
-		EAFE076314EC27E9001368BA /* ofxTuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFE075514EC27E9001368BA /* ofxTuioClient.cpp */; };
-		EAFE076414EC27E9001368BA /* TuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFE075814EC27E9001368BA /* TuioClient.cpp */; };
-		EAFE076514EC27E9001368BA /* TuioServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFE075F14EC27E9001368BA /* TuioServer.cpp */; };
-		EAFE076614EC27E9001368BA /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAFE076114EC27E9001368BA /* TuioTime.cpp */; };
-		EAFE07B414EC287A001368BA /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFE076914EC287A001368BA /* cameras.c */; };
-		EAFE07B514EC287A001368BA /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFE076C14EC287A001368BA /* core.c */; };
-		EAFE07B614EC287A001368BA /* freenect.lib in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFE077214EC287A001368BA /* freenect.lib */; };
-		EAFE07B714EC287A001368BA /* registration.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFE077614EC287A001368BA /* registration.c */; };
-		EAFE07B814EC287A001368BA /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFE077814EC287A001368BA /* tilt.c */; };
-		EAFE07B914EC287A001368BA /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = EAFE077914EC287A001368BA /* usb_libusb10.c */; };
-		EAFE07BA14EC287A001368BA /* usb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFE078114EC287A001368BA /* usb-1.0.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,7 +163,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E4C2426B10CC5AA6004149E2 /* GLUT.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +334,6 @@
 		E4C2424410CC5A17004149E2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		E4C2424510CC5A17004149E2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		E4C2424610CC5A17004149E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
-		E4C2425F10CC5A78004149E2 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = SOURCE_ROOT; };
 		EA1567351427399F00A9519A /* Tunnel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Tunnel.cpp; sourceTree = "<group>"; };
 		EA1567361427399F00A9519A /* Tunnel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tunnel.h; sourceTree = "<group>"; };
 		EA156739142739B900A9519A /* Paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Paths.cpp; sourceTree = "<group>"; };
@@ -361,7 +347,6 @@
 		EA23EDD6139D13AE0071404C /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
 		EA23EDDB139D13AE0071404C /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
 		EA23EDDE139D13AE0071404C /* AboutPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
-		EA23EDDF139D13AE0071404C /* AboutPage.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutPage.mm; sourceTree = "<group>"; };
 		EA23EDE0139D13AE0071404C /* MainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenu.h; sourceTree = "<group>"; };
 		EA23EDE1139D13AE0071404C /* MainMenu.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainMenu.mm; sourceTree = "<group>"; };
 		EA23EDE3139D13AE0071404C /* BrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrightnessSlider.h; sourceTree = "<group>"; };
@@ -371,21 +356,6 @@
 		EA23EE6E139D1CBE0071404C /* ofxCvKalman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCvKalman.h; sourceTree = "<group>"; };
 		EA2B8F6F13B0FD1C0040917B /* Painter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Painter.cpp; path = Painter/Painter.cpp; sourceTree = "<group>"; };
 		EA2B8F7013B0FD1C0040917B /* Painter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Painter.h; path = Painter/Painter.h; sourceTree = "<group>"; };
-		EA2B8FDF13B101890040917B /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
-		EA2B8FE413B101890040917B /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
-		EA2B8FE513B101890040917B /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
-		EA2B8FE613B101890040917B /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
-		EA2B8FE713B101890040917B /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
-		EA2B8FE813B101890040917B /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
-		EA2B8FEA13B101890040917B /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
-		EA2B8FEB13B101890040917B /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
-		EA2B8FEC13B101890040917B /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
-		EA2B8FED13B101890040917B /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
-		EA2B8FEE13B101890040917B /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
-		EA2B8FEF13B101890040917B /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
-		EA2B8FF013B101890040917B /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
-		EA2B8FF113B101890040917B /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
-		EA2B8FFC13B101890040917B /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
 		EA2B900313B101890040917B /* ofxOsc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOsc.h; sourceTree = "<group>"; };
 		EA2B900413B101890040917B /* ofxOscArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscArg.h; sourceTree = "<group>"; };
 		EA2B900513B101890040917B /* ofxOscBundle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscBundle.cpp; sourceTree = "<group>"; };
@@ -396,17 +366,37 @@
 		EA2B900A13B101890040917B /* ofxOscReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscReceiver.h; sourceTree = "<group>"; };
 		EA2B900B13B101890040917B /* ofxOscSender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscSender.cpp; sourceTree = "<group>"; };
 		EA2B900C13B101890040917B /* ofxOscSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscSender.h; sourceTree = "<group>"; };
-		EA2B901A13B1018E0040917B /* osc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = osc.a; sourceTree = "<group>"; };
 		EA30E1D413D5C16600E6E26C /* Centerer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Centerer.h; sourceTree = "<group>"; };
-		EA48D25314EAC1080081DF15 /* Settings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Settings.cpp; sourceTree = "<group>"; };
-		EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ReactickleApp.cpp; sourceTree = "<group>"; };
 		EA48D29E14EAC7980081DF15 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		EA87B9F9142896B900A0CCDE /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mongoose.c; sourceTree = "<group>"; };
-		EA87B9FA142896B900A0CCDE /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mongoose.h; sourceTree = "<group>"; };
-		EA87B9FC142896B900A0CCDE /* ofxWebServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWebServer.cpp; sourceTree = "<group>"; };
-		EA87B9FD142896B900A0CCDE /* ofxWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxWebServer.h; sourceTree = "<group>"; };
-		EA87B9FE142896B900A0CCDE /* ofxWSRequestHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWSRequestHandler.cpp; sourceTree = "<group>"; };
-		EA87B9FF142896B900A0CCDE /* ofxWSRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxWSRequestHandler.h; sourceTree = "<group>"; };
+		EA77EECC2E60426E00C896EC /* Settings.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Settings.mm; sourceTree = "<group>"; };
+		EA77EECE2E60433B00C896EC /* ReactickleApp.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ReactickleApp.mm; sourceTree = "<group>"; };
+		EA77EED02E6043E700C896EC /* NetworkingUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkingUtils.cpp; sourceTree = "<group>"; };
+		EA77EED12E6043E700C896EC /* UdpSocket.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
+		EA77EED62E6043E700C896EC /* IpEndpointName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
+		EA77EED72E6043E700C896EC /* IpEndpointName.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
+		EA77EED82E6043E700C896EC /* NetworkingUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
+		EA77EED92E6043E700C896EC /* PacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
+		EA77EEDA2E6043E700C896EC /* TimerListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
+		EA77EEDB2E6043E700C896EC /* UdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
+		EA77EEDD2E6043E700C896EC /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
+		EA77EEDE2E6043E700C896EC /* OscException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
+		EA77EEDF2E6043E700C896EC /* OscHostEndianness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
+		EA77EEE02E6043E700C896EC /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
+		EA77EEE12E6043E700C896EC /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
+		EA77EEE22E6043E700C896EC /* OscPacketListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
+		EA77EEE32E6043E700C896EC /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
+		EA77EEE42E6043E700C896EC /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscPrintReceivedElements.cpp; sourceTree = "<group>"; };
+		EA77EEE52E6043E700C896EC /* OscReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
+		EA77EEE62E6043E700C896EC /* OscReceivedElements.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscReceivedElements.cpp; sourceTree = "<group>"; };
+		EA77EEE72E6043E700C896EC /* OscTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		EA77EEE82E6043E700C896EC /* OscTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
+		EA77EEF72E605D0400C896EC /* CheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
+		EA77EEFA2E606EB900C896EC /* opencv.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = opencv.xcframework; path = ../../../addons/ofxOpenCv/libs/opencv/lib/macos/opencv.xcframework; sourceTree = "<group>"; };
+		EA77EEFC2E606ECB00C896EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EA77EEFE2E606ED700C896EC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		EA77EF002E606EE800C896EC /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		EA77EF022E606EFB00C896EC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EA77EF042E606F1400C896EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		EA87BA1F1428EBCE00A0CCDE /* InkWell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkWell.h; sourceTree = "<group>"; };
 		EA8AFB9A1427614000AF134D /* ofxBlobSmoother.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBlobSmoother.cpp; sourceTree = "<group>"; };
 		EA8AFB9B1427614000AF134D /* ofxBlobSmoother.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBlobSmoother.h; sourceTree = "<group>"; };
@@ -444,7 +434,7 @@
 		EAD4930413A8B48D00D312FE /* Properties.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Properties.cpp; sourceTree = "<group>"; };
 		EAD4930513A8B48D00D312FE /* Properties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Properties.h; sourceTree = "<group>"; };
 		EAD4930613A8B48D00D312FE /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
-		EAD4930813A8B48D00D312FE /* util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = util.cpp; sourceTree = "<group>"; };
+		EAD4930813A8B48D00D312FE /* util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = util.cpp; sourceTree = "<group>"; };
 		EAD4930913A8B48D00D312FE /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
 		EAD4930B13A8B48D00D312FE /* KinectOrCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KinectOrCamera.cpp; sourceTree = "<group>"; };
 		EAD4930C13A8B48D00D312FE /* KinectOrCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KinectOrCamera.h; sourceTree = "<group>"; };
@@ -561,19 +551,6 @@
 		EAE521D713AF4774006B1572 /* ofxCvShortImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxCvShortImage.cpp; sourceTree = "<group>"; };
 		EAE521D813AF4774006B1572 /* ofxCvShortImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCvShortImage.h; sourceTree = "<group>"; };
 		EAE521D913AF4774006B1572 /* ofxOpenCv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOpenCv.h; sourceTree = "<group>"; };
-		EAFE075514EC27E9001368BA /* ofxTuioClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTuioClient.cpp; sourceTree = "<group>"; };
-		EAFE075614EC27E9001368BA /* ofxTuioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTuioClient.h; sourceTree = "<group>"; };
-		EAFE075814EC27E9001368BA /* TuioClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioClient.cpp; sourceTree = "<group>"; };
-		EAFE075914EC27E9001368BA /* TuioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioClient.h; sourceTree = "<group>"; };
-		EAFE075A14EC27E9001368BA /* TuioContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioContainer.h; sourceTree = "<group>"; };
-		EAFE075B14EC27E9001368BA /* TuioCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioCursor.h; sourceTree = "<group>"; };
-		EAFE075C14EC27E9001368BA /* TuioListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioListener.h; sourceTree = "<group>"; };
-		EAFE075D14EC27E9001368BA /* TuioObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioObject.h; sourceTree = "<group>"; };
-		EAFE075E14EC27E9001368BA /* TuioPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioPoint.h; sourceTree = "<group>"; };
-		EAFE075F14EC27E9001368BA /* TuioServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioServer.cpp; sourceTree = "<group>"; };
-		EAFE076014EC27E9001368BA /* TuioServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioServer.h; sourceTree = "<group>"; };
-		EAFE076114EC27E9001368BA /* TuioTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioTime.cpp; sourceTree = "<group>"; };
-		EAFE076214EC27E9001368BA /* TuioTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioTime.h; sourceTree = "<group>"; };
 		EAFE076814EC287A001368BA /* APACHE20 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = APACHE20; sourceTree = "<group>"; };
 		EAFE076914EC287A001368BA /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
 		EAFE076A14EC287A001368BA /* cameras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameras.h; sourceTree = "<group>"; };
@@ -630,6 +607,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA77EF052E606F1400C896EC /* SystemConfiguration.framework in Frameworks */,
+				EA77EF032E606EFB00C896EC /* Accelerate.framework in Frameworks */,
+				EA77EF012E606EE800C896EC /* CoreMedia.framework in Frameworks */,
+				EA77EEFF2E606ED700C896EC /* CoreVideo.framework in Frameworks */,
+				EA77EEFD2E606ECB00C896EC /* AVFoundation.framework in Frameworks */,
 				E4C2422B10CC554B004149E2 /* openFrameworksDebug.a in Frameworks */,
 				E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */,
 				E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */,
@@ -639,17 +621,11 @@
 				E45BE9800E8CC7DD009D7055 /* CoreFoundation.framework in Frameworks */,
 				E45BE9810E8CC7DD009D7055 /* CoreServices.framework in Frameworks */,
 				E45BE9830E8CC7DD009D7055 /* OpenGL.framework in Frameworks */,
-				E45BE9840E8CC7DD009D7055 /* QuickTime.framework in Frameworks */,
 				E4C2424710CC5A17004149E2 /* AppKit.framework in Frameworks */,
 				E4C2424810CC5A17004149E2 /* Cocoa.framework in Frameworks */,
 				E4C2424910CC5A17004149E2 /* IOKit.framework in Frameworks */,
-				E4C2426610CC5A78004149E2 /* GLUT.framework in Frameworks */,
+				EA77EEFB2E606EB900C896EC /* opencv.xcframework in Frameworks */,
 				EAD4962D13A8CF2B00D312FE /* MultitouchSupport.framework in Frameworks */,
-				EAE5222013AF4775006B1572 /* opencv.a in Frameworks */,
-				EA2B901113B101890040917B /* osc.a in Frameworks */,
-				EA2B901B13B1018E0040917B /* osc.a in Frameworks */,
-				EAFE07B614EC287A001368BA /* freenect.lib in Frameworks */,
-				EAFE07BA14EC287A001368BA /* usb-1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -773,7 +749,8 @@
 				4B418B7D145DF0CA00EAF94F /* Box2D */,
 				4B418BCB145DF0CA00EAF94F /* triangle */,
 			);
-			path = lib;
+			name = lib;
+			path = libs;
 			sourceTree = "<group>";
 		};
 		4B418B7D145DF0CA00EAF94F /* Box2D */ = {
@@ -941,7 +918,6 @@
 		E45BE5980E8CC70C009D7055 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E4C2425F10CC5A78004149E2 /* GLUT.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
 				E4C2424610CC5A17004149E2 /* IOKit.framework */,
@@ -970,6 +946,7 @@
 				EAB3098B137AF2ED0086DE6F /* addons */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
+				EA77EEF92E606EB900C896EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1050,7 +1027,6 @@
 			isa = PBXGroup;
 			children = (
 				EA23EDDE139D13AE0071404C /* AboutPage.h */,
-				EA23EDDF139D13AE0071404C /* AboutPage.mm */,
 				EA23EDE0139D13AE0071404C /* MainMenu.h */,
 				EA23EDE1139D13AE0071404C /* MainMenu.mm */,
 				EA23EDE2139D13AE0071404C /* settings */,
@@ -1090,82 +1066,12 @@
 		EA2B8FDE13B101890040917B /* ofxOsc */ = {
 			isa = PBXGroup;
 			children = (
-				EA2B8FDF13B101890040917B /* install.xml */,
-				EA2B8FE013B101890040917B /* libs */,
+				EA77EEEC2E6043E700C896EC /* libs */,
 				EA2B900213B101890040917B /* src */,
 			);
 			name = ofxOsc;
 			path = ../../../addons/ofxOsc;
 			sourceTree = SOURCE_ROOT;
-		};
-		EA2B8FE013B101890040917B /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FE113B101890040917B /* oscpack */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		EA2B8FE113B101890040917B /* oscpack */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FE213B101890040917B /* include */,
-				EA2B8FF213B101890040917B /* lib */,
-			);
-			path = oscpack;
-			sourceTree = "<group>";
-		};
-		EA2B8FE213B101890040917B /* include */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FE313B101890040917B /* ip */,
-				EA2B8FE913B101890040917B /* osc */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		EA2B8FE313B101890040917B /* ip */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FE413B101890040917B /* IpEndpointName.h */,
-				EA2B8FE513B101890040917B /* NetworkingUtils.h */,
-				EA2B8FE613B101890040917B /* PacketListener.h */,
-				EA2B8FE713B101890040917B /* TimerListener.h */,
-				EA2B8FE813B101890040917B /* UdpSocket.h */,
-			);
-			path = ip;
-			sourceTree = "<group>";
-		};
-		EA2B8FE913B101890040917B /* osc */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FEA13B101890040917B /* MessageMappingOscPacketListener.h */,
-				EA2B8FEB13B101890040917B /* OscException.h */,
-				EA2B8FEC13B101890040917B /* OscHostEndianness.h */,
-				EA2B8FED13B101890040917B /* OscOutboundPacketStream.h */,
-				EA2B8FEE13B101890040917B /* OscPacketListener.h */,
-				EA2B8FEF13B101890040917B /* OscPrintReceivedElements.h */,
-				EA2B8FF013B101890040917B /* OscReceivedElements.h */,
-				EA2B8FF113B101890040917B /* OscTypes.h */,
-			);
-			path = osc;
-			sourceTree = "<group>";
-		};
-		EA2B8FF213B101890040917B /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FFB13B101890040917B /* osx */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		EA2B8FFB13B101890040917B /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				EA2B8FFC13B101890040917B /* osc.a */,
-			);
-			path = osx;
-			sourceTree = "<group>";
 		};
 		EA2B900213B101890040917B /* src */ = {
 			isa = PBXGroup;
@@ -1184,43 +1090,84 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		EA2B901913B1018E0040917B /* osx */ = {
+		EA77EED22E6043E700C896EC /* posix */ = {
 			isa = PBXGroup;
 			children = (
-				EA2B901A13B1018E0040917B /* osc.a */,
+				EA77EED02E6043E700C896EC /* NetworkingUtils.cpp */,
+				EA77EED12E6043E700C896EC /* UdpSocket.cpp */,
 			);
-			name = osx;
-			path = ../../../addons/ofxOsc/libs/oscpack/lib/osx;
-			sourceTree = SOURCE_ROOT;
-		};
-		EA87B9E8142896B900A0CCDE /* ofxWebServer */ = {
-			isa = PBXGroup;
-			children = (
-				EA87B9F8142896B900A0CCDE /* lib */,
-				EA87B9FB142896B900A0CCDE /* src */,
-			);
-			name = ofxWebServer;
-			path = ../addons/ofxWebServer;
+			path = posix;
 			sourceTree = "<group>";
 		};
-		EA87B9F8142896B900A0CCDE /* lib */ = {
+		EA77EEDC2E6043E700C896EC /* ip */ = {
 			isa = PBXGroup;
 			children = (
-				EA87B9F9142896B900A0CCDE /* mongoose.c */,
-				EA87B9FA142896B900A0CCDE /* mongoose.h */,
+				EA77EED22E6043E700C896EC /* posix */,
+				EA77EED62E6043E700C896EC /* IpEndpointName.h */,
+				EA77EED72E6043E700C896EC /* IpEndpointName.cpp */,
+				EA77EED82E6043E700C896EC /* NetworkingUtils.h */,
+				EA77EED92E6043E700C896EC /* PacketListener.h */,
+				EA77EEDA2E6043E700C896EC /* TimerListener.h */,
+				EA77EEDB2E6043E700C896EC /* UdpSocket.h */,
 			);
-			path = lib;
+			path = ip;
 			sourceTree = "<group>";
 		};
-		EA87B9FB142896B900A0CCDE /* src */ = {
+		EA77EEE92E6043E700C896EC /* osc */ = {
 			isa = PBXGroup;
 			children = (
-				EA87B9FC142896B900A0CCDE /* ofxWebServer.cpp */,
-				EA87B9FD142896B900A0CCDE /* ofxWebServer.h */,
-				EA87B9FE142896B900A0CCDE /* ofxWSRequestHandler.cpp */,
-				EA87B9FF142896B900A0CCDE /* ofxWSRequestHandler.h */,
+				EA77EEDD2E6043E700C896EC /* MessageMappingOscPacketListener.h */,
+				EA77EEDE2E6043E700C896EC /* OscException.h */,
+				EA77EEDF2E6043E700C896EC /* OscHostEndianness.h */,
+				EA77EEE02E6043E700C896EC /* OscOutboundPacketStream.h */,
+				EA77EEE12E6043E700C896EC /* OscOutboundPacketStream.cpp */,
+				EA77EEE22E6043E700C896EC /* OscPacketListener.h */,
+				EA77EEE32E6043E700C896EC /* OscPrintReceivedElements.h */,
+				EA77EEE42E6043E700C896EC /* OscPrintReceivedElements.cpp */,
+				EA77EEE52E6043E700C896EC /* OscReceivedElements.h */,
+				EA77EEE62E6043E700C896EC /* OscReceivedElements.cpp */,
+				EA77EEE72E6043E700C896EC /* OscTypes.h */,
+				EA77EEE82E6043E700C896EC /* OscTypes.cpp */,
+			);
+			path = osc;
+			sourceTree = "<group>";
+		};
+		EA77EEEA2E6043E700C896EC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EA77EEDC2E6043E700C896EC /* ip */,
+				EA77EEE92E6043E700C896EC /* osc */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		EA77EEEB2E6043E700C896EC /* oscpack */ = {
+			isa = PBXGroup;
+			children = (
+				EA77EEEA2E6043E700C896EC /* src */,
+			);
+			path = oscpack;
+			sourceTree = "<group>";
+		};
+		EA77EEEC2E6043E700C896EC /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				EA77EEEB2E6043E700C896EC /* oscpack */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		EA77EEF92E606EB900C896EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA77EF042E606F1400C896EC /* SystemConfiguration.framework */,
+				EA77EF022E606EFB00C896EC /* Accelerate.framework */,
+				EA77EF002E606EE800C896EC /* CoreMedia.framework */,
+				EA77EEFE2E606ED700C896EC /* CoreVideo.framework */,
+				EA77EEFC2E606ECB00C896EC /* AVFoundation.framework */,
+				EA77EEFA2E606EB900C896EC /* opencv.xcframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EA8AFB991427614000AF134D /* ofxBlobTracker */ = {
@@ -1249,15 +1196,11 @@
 		EAB3098B137AF2ED0086DE6F /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				EAFE075414EC27E9001368BA /* ofxTuioClient */,
-				EAFE075714EC27E9001368BA /* TUIO */,
 				4B418B7A145DF0CA00EAF94F /* ofxBox2d */,
-				EA87B9E8142896B900A0CCDE /* ofxWebServer */,
 				EA8AFB991427614000AF134D /* ofxBlobTracker */,
 				EA15673C14273E4A00A9519A /* ofxCvOpticalFlowLK */,
 				4B336B1B13F69E6800265059 /* ofxMSAInteractiveObject */,
 				4B336B2A13F69E6800265059 /* ofxSimpleGuiToo */,
-				EA2B901913B1018E0040917B /* osx */,
 				EA2B8FDE13B101890040917B /* ofxOsc */,
 				EAE5210613AF4773006B1572 /* ofxOpenCv */,
 				EAD4962413A8CEF400D312FE /* ofxMultiTouchPad */,
@@ -1337,7 +1280,7 @@
 				EAD4938113A8B66800D312FE /* main.mm */,
 				EA30E1D413D5C16600E6E26C /* Centerer.h */,
 				EAD4931913A8B4E100D312FE /* ReactickleApp.h */,
-				EA48D25514EAC1110081DF15 /* ReactickleApp.cpp */,
+				EA77EECE2E60433B00C896EC /* ReactickleApp.mm */,
 				EAD492F213A8B48D00D312FE /* Reactickle.h */,
 			);
 			path = app;
@@ -1357,6 +1300,7 @@
 		EAD492F813A8B48D00D312FE /* gui */ = {
 			isa = PBXGroup;
 			children = (
+				EA77EEF72E605D0400C896EC /* CheckBox.h */,
 				EAD4956313A8C5A300D312FE /* ReactickleButton.cpp */,
 				EAD4956413A8C5A300D312FE /* ReactickleButton.h */,
 				EAD492F913A8B48D00D312FE /* ColorCube.h */,
@@ -1382,7 +1326,7 @@
 				EAD4930413A8B48D00D312FE /* Properties.cpp */,
 				EAD4930513A8B48D00D312FE /* Properties.h */,
 				EAD4930613A8B48D00D312FE /* Settings.h */,
-				EA48D25314EAC1080081DF15 /* Settings.cpp */,
+				EA77EECC2E60426E00C896EC /* Settings.mm */,
 				EAD4930813A8B48D00D312FE /* util.cpp */,
 				EAD4930913A8B48D00D312FE /* util.h */,
 			);
@@ -1753,35 +1697,6 @@
 			path = src;
 			sourceTree = "<group>";
 		};
-		EAFE075414EC27E9001368BA /* ofxTuioClient */ = {
-			isa = PBXGroup;
-			children = (
-				EAFE075514EC27E9001368BA /* ofxTuioClient.cpp */,
-				EAFE075614EC27E9001368BA /* ofxTuioClient.h */,
-			);
-			name = ofxTuioClient;
-			path = ../addons/ofxTuioClient;
-			sourceTree = "<group>";
-		};
-		EAFE075714EC27E9001368BA /* TUIO */ = {
-			isa = PBXGroup;
-			children = (
-				EAFE075814EC27E9001368BA /* TuioClient.cpp */,
-				EAFE075914EC27E9001368BA /* TuioClient.h */,
-				EAFE075A14EC27E9001368BA /* TuioContainer.h */,
-				EAFE075B14EC27E9001368BA /* TuioCursor.h */,
-				EAFE075C14EC27E9001368BA /* TuioListener.h */,
-				EAFE075D14EC27E9001368BA /* TuioObject.h */,
-				EAFE075E14EC27E9001368BA /* TuioPoint.h */,
-				EAFE075F14EC27E9001368BA /* TuioServer.cpp */,
-				EAFE076014EC27E9001368BA /* TuioServer.h */,
-				EAFE076114EC27E9001368BA /* TuioTime.cpp */,
-				EAFE076214EC27E9001368BA /* TuioTime.h */,
-			);
-			name = TUIO;
-			path = ../addons/TUIO;
-			sourceTree = "<group>";
-		};
 		EAFE076714EC287A001368BA /* libfreenect */ = {
 			isa = PBXGroup;
 			children = (
@@ -2065,6 +1980,7 @@
 				E4B6FFFD0C3F9AB9008CF71C /* ShellScript */,
 				E4C2427710CC5ABF004149E2 /* CopyFiles */,
 				EA48D29F14EAC7D70081DF15 /* CopyFiles */,
+				EA77EF062E606FFB00C896EC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2081,6 +1997,8 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "SomanticsMac" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -2129,7 +2047,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -r bin/data \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/\"\n\ncp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"\ninstall_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\" ";
+			shellScript = "cp -r bin/data \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/\"\n\ncp -f ../../../libs/fmodex/lib/osx/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/libfmodex.dylib\"\ninstall_name_tool -change ./libfmodex.dylib @executable_path/libfmodex.dylib \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\" \n";
+		};
+		EA77EF062E606FFB00C896EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nrsync -avz \"${PROJECT_DIR}/bin/data/\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/data/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2143,11 +2078,10 @@
 				EAB309FF137AF3E00086DE6F /* tinyxmlparser.cpp in Sources */,
 				EAB30A00137AF3E00086DE6F /* ofxXmlSettings.cpp in Sources */,
 				EA23EDE6139D13AE0071404C /* Apps.mm in Sources */,
+				EA77EECF2E60433B00C896EC /* ReactickleApp.mm in Sources */,
 				EA23EDE8139D13AE0071404C /* testApp.mm in Sources */,
-				EA23EDEB139D13AE0071404C /* AboutPage.mm in Sources */,
 				EA23EDEC139D13AE0071404C /* MainMenu.mm in Sources */,
 				EA23EDED139D13AE0071404C /* SettingsPage.mm in Sources */,
-				EA23EEA3139D1CBF0071404C /* ofxCvKalman.cpp in Sources */,
 				EAD4931113A8B48D00D312FE /* MagicShapes.cpp in Sources */,
 				EAD4931213A8B48D00D312FE /* ColorPicker.cpp in Sources */,
 				EAD4931313A8B48D00D312FE /* ImageCache.cpp in Sources */,
@@ -2155,7 +2089,6 @@
 				EAD4931613A8B48D00D312FE /* util.cpp in Sources */,
 				EAD4931713A8B48D00D312FE /* KinectOrCamera.cpp in Sources */,
 				EAD4938213A8B66800D312FE /* main.mm in Sources */,
-				EAD4947213A8BA9A00D312FE /* ofxKinect.cpp in Sources */,
 				EAD4956513A8C5A300D312FE /* ReactickleButton.cpp in Sources */,
 				EAD4960913A8CD5C00D312FE /* Windmills.cpp in Sources */,
 				EAD4962B13A8CEF400D312FE /* ofxMultiTouchPad.cpp in Sources */,
@@ -2169,6 +2102,13 @@
 				EAE5223B13AF4775006B1572 /* ofxCvHaarFinder.cpp in Sources */,
 				EAE5223C13AF4775006B1572 /* ofxCvImage.cpp in Sources */,
 				EAE5223D13AF4775006B1572 /* ofxCvShortImage.cpp in Sources */,
+				EA77EEED2E6043E700C896EC /* UdpSocket.cpp in Sources */,
+				EA77EEEF2E6043E700C896EC /* OscOutboundPacketStream.cpp in Sources */,
+				EA77EEF02E6043E700C896EC /* NetworkingUtils.cpp in Sources */,
+				EA77EEF12E6043E700C896EC /* OscReceivedElements.cpp in Sources */,
+				EA77EEF22E6043E700C896EC /* IpEndpointName.cpp in Sources */,
+				EA77EEF42E6043E700C896EC /* OscTypes.cpp in Sources */,
+				EA77EEF52E6043E700C896EC /* OscPrintReceivedElements.cpp in Sources */,
 				EA2B8F7113B0FD1C0040917B /* Painter.cpp in Sources */,
 				EA2B901513B101890040917B /* ofxOscBundle.cpp in Sources */,
 				EA2B901613B101890040917B /* ofxOscMessage.cpp in Sources */,
@@ -2199,11 +2139,6 @@
 				EA15673B142739B900A9519A /* Paths.cpp in Sources */,
 				EA15673F14273E4A00A9519A /* ofxCvOpticalFlowLK.cpp in Sources */,
 				EA15674214274BCD00A9519A /* contourutils.cpp in Sources */,
-				EA8AFB9E1427614000AF134D /* ofxBlobSmoother.cpp in Sources */,
-				EA8AFB9F1427614000AF134D /* ofxBlobTracker.cpp in Sources */,
-				EA87BA07142896B900A0CCDE /* mongoose.c in Sources */,
-				EA87BA08142896B900A0CCDE /* ofxWebServer.cpp in Sources */,
-				EA87BA09142896B900A0CCDE /* ofxWSRequestHandler.cpp in Sources */,
 				4B418B77145DF0BA00EAF94F /* Cascades.cpp in Sources */,
 				4B418BE3145DF0CA00EAF94F /* b2BroadPhase.cpp in Sources */,
 				4B418BE4145DF0CA00EAF94F /* b2CollideCircle.cpp in Sources */,
@@ -2247,17 +2182,7 @@
 				4B418C0A145DF0CA00EAF94F /* ofxBox2dJoint.cpp in Sources */,
 				4B418C0B145DF0CA00EAF94F /* ofxBox2dPolygon.cpp in Sources */,
 				4B418C0C145DF0CA00EAF94F /* ofxBox2dRect.cpp in Sources */,
-				EA48D25414EAC1080081DF15 /* Settings.cpp in Sources */,
-				EA48D25614EAC1110081DF15 /* ReactickleApp.cpp in Sources */,
-				EAFE076314EC27E9001368BA /* ofxTuioClient.cpp in Sources */,
-				EAFE076414EC27E9001368BA /* TuioClient.cpp in Sources */,
-				EAFE076514EC27E9001368BA /* TuioServer.cpp in Sources */,
-				EAFE076614EC27E9001368BA /* TuioTime.cpp in Sources */,
-				EAFE07B414EC287A001368BA /* cameras.c in Sources */,
-				EAFE07B514EC287A001368BA /* core.c in Sources */,
-				EAFE07B714EC287A001368BA /* registration.c in Sources */,
-				EAFE07B814EC287A001368BA /* tilt.c in Sources */,
-				EAFE07B914EC287A001368BA /* usb_libusb10.c in Sources */,
+				EA77EECD2E60426E00C896EC /* Settings.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2275,8 +2200,6 @@
 		E4B69B4E0A3A1720003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
@@ -2286,7 +2209,6 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2308,19 +2230,6 @@
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_1)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_2)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_3)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_4)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_5)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_6)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_10)",
-				);
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_1 = "\"../../../libs/poco/lib/osx/PocoUtil.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_2 = "\"../../../libs/poco/lib/osx/PocoXML.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_3 = "\"../../../libs/poco/lib/osx/PocoFoundation.a\"";
@@ -2330,15 +2239,12 @@
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7 = "\"../../../libs/FreeImage/lib/osx/freeimage.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8 = "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9 = "\"../../../libs/glew/lib/osx/glew.a\"";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Debug;
 		};
 		E4B69B4F0A3A1720003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/bin/";
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -2350,7 +2256,6 @@
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_UNROLL_LOOPS = YES;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL = NO;
@@ -2372,19 +2277,6 @@
 					"-D__MACOSX_CORE__",
 					"-lpthread",
 				);
-				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_1)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_2)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_3)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_4)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_5)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_6)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9)",
-					"$(OTHER_LDFLAGS_QUOTED_FOR_PROJECT_10)",
-				);
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_1 = "\"../../../libs/poco/lib/osx/PocoUtil.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_2 = "\"../../../libs/poco/lib/osx/PocoXML.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_3 = "\"../../../libs/poco/lib/osx/PocoFoundation.a\"";
@@ -2394,14 +2286,13 @@
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_7 = "\"../../../libs/FreeImage/lib/osx/freeimage.a\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_8 = "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\"";
 				OTHER_LDFLAGS_QUOTED_FOR_PROJECT_9 = "\"../../../libs/glew/lib/osx/glew.a\"";
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
 			};
 			name = Release;
 		};
 		E4B69B600A3A1757003C02F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2415,15 +2306,13 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G4;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG_MODE=1";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					../../../addons/ofxOsc/libs/oscpack/include,
 					../../../libs/tess2/include,
 					../../../libs/glew/include,
-					../../../addons/ofxOsc/libs/include,
+					../../../addons/ofxOsc/libs/oscpack/src,
 					../addons/ofxKinect/libs/libusb/osx/include,
 					../../../addons/ofxOpenCv/libs/opencv/include,
 					"../../../libs/openFrameworks/**",
@@ -2431,10 +2320,15 @@
 					../../../libs/freetype/include/freetype2,
 					../../../libs/poco/include,
 					../../../addons/,
-					"../../../libs/glew/include/GL/**",
+					../../../libs/glew/include/GL,
 					"../../../libs/fmodex/include/**",
 					"../../../libs/freeimage/include/**",
-					"../../../libs/cairo/include/cairo/**",
+					../../../libs/cairo/include,
+					../../../libs/glm/include,
+					../../../libs/utf8/include,
+					../../../libs/json/include,
+					../../../libs/pugixml/include,
+					../../../libs/cairo/include,
 				);
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -2538,7 +2432,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../libs/glew/libs/osx\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi-v7a\"";
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -2549,7 +2444,7 @@
 		E4B69B610A3A1757003C02F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ONLY_ACTIVE_ARCH_PRE_XCODE_3_1)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++23";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2561,14 +2456,12 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G4;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Carbon.framework/Headers/Carbon.h";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				HEADER_SEARCH_PATHS = (
 					../../../addons/ofxOsc/libs/oscpack/include,
 					../../../libs/tess2/include,
 					../../../libs/glew/include,
-					../../../addons/ofxOsc/libs/include,
+					../../../addons/ofxOsc/libs/oscpack/src,
 					../addons/ofxKinect/libs/libusb/osx/include,
 					../../../addons/ofxOpenCv/libs/opencv/include,
 					"../../../libs/openFrameworks/**",
@@ -2576,10 +2469,15 @@
 					../../../libs/freetype/include/freetype2,
 					../../../libs/poco/include,
 					../../../addons/,
-					"../../../libs/glew/include/GL/**",
+					../../../libs/glew/include/GL,
 					"../../../libs/fmodex/include/**",
 					"../../../libs/freeimage/include/**",
-					"../../../libs/cairo/include/cairo/**",
+					../../../libs/cairo/include,
+					../../../libs/glm/include,
+					../../../libs/utf8/include,
+					../../../libs/json/include,
+					../../../libs/pugixml/include,
+					../../../libs/cairo/include,
 				);
 				INFOPLIST_FILE = "openFrameworks-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -2683,7 +2581,8 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_7 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_8 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/android/armeabi-v7a\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_9 = "\"$(SRCROOT)/../../../addons/ofxOpenCv/libs/opencv/lib/iphone\"";
-				ONLY_ACTIVE_ARCH_PRE_XCODE_3_1 = "$(NATIVE_ARCH)";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
